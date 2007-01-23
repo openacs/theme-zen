@@ -1,0 +1,15 @@
+.portlet-header {
+	background: #2e72b8; /* color */
+}
+
+.portlet {
+	border: 1px solid #2e72b8; /* color */
+}
+
+#main-navigation #active {
+	background-image:url("/resources/theme-zen/images/navigation/blue/left_on.gif");
+}
+	
+#main-navigation #active a {
+	background-image:url("/resources/theme-zen/images/navigation/blue/right_on.gif");
+}

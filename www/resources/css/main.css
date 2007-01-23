@@ -1,3 +1,6 @@
+@import url(navigation.css);
+@import url(portlets.css);
+
 body {
     margin:5px 10px 0px 10px; 
     padding:0;
@@ -82,103 +85,7 @@ float: left;
 
 /* END OF HEADER */
 
-/* MAIN NAVIGATION -----------------------------------------------------------*/
 
-#main-navigation {
-	float:left;
-	width:100%;
-	background: url("/resources/theme-zen/images/navigation/bg.gif") repeat-x bottom;
-	clear: both;
-	display: block;
-}
-	
-#main-navigation ul {
-	margin:0;
-	padding:10px 10px 0;
-	list-style:none;
-}
-
-#main-navigation li {
-	float:left;
-	background:url("/resources/theme-zen/images/navigation/left.gif") no-repeat left top;
-	margin:0;
-	padding:0 0 0 9px;
-}
-
-#main-navigation a {
-	float:left;
-	display:block;
-	background:url("/resources/theme-zen/images/navigation/right.gif") no-repeat right top;
-	padding:5px 15px 4px 6px;
-	text-decoration:none;
-	font-weight:bold;
-	font-size: .95em;
-	color:#757575;
-}
-	
-
-#main-navigation #main-navigation-active {
-	background-image:url("/resources/theme-zen/images/navigation/left_on.gif");
-}
-	
-#main-navigation #main-navigation-active a {
-	background-image:url("/resources/theme-zen/images/navigation/right_on.gif");
-	color:#000;
-	padding-bottom:5px;
-}
-
-#main-navigation a:hover {
-    color: #000;
-    text-decoration: underline;
-}
-
-/* END OF MAIN NAVIGATION */
-
-
-/* SUB NAVIGATION -----------------------------------------------------------*/
-
-#sub-navigation {
-	float: left;
-	width:100%;
-	background: url("/resources/theme-zen/images/navigation/bg.gif") repeat-x bottom;
-	clear: both;
-	padding-top: 5px;  /* remove this padding to make the subnavigation links to appear completly enclosed */
-	padding-bottom: 5px  /* remove this padding to make the subnavigation links to appear completly enclosed */
-}
-	
-#sub-navigation ul {
-	margin: 0;
-	padding:0px 10px 10px 10px;
-	list-style:none;
-	line-height: .7em;
-}
-	
-#sub-navigation li {
-	float:left;
-	border-right: 1px solid #a0a3a1;
-	padding: 0px 20px 0px 20px ; 
-}
-	
-#sub-navigation a {
-	float:left;
-	display:block;
-    color:#757575;
-    padding:4px 0px 6px 0px;
-    text-decoration: none;
-    font-weight:bold;
-    font-size: .95em;
-}
-
-#sub-navigation li a:hover {
-    color: #000;
-    text-decoration: underline;
-}
-
-#sub-navigation li#sub-navigation-active a {
-    color: #000;
-}
-
-/* END OF SUB NAVIGATION */
 
 
 /* ALERT MESSAGE AREA -----------------------------------------------------------*/
@@ -200,58 +107,7 @@ float: left;
 
 /* END OF ALERT*/
 
-/* PORTLETS -----------------------------------------------------------*/
-/* contains: all general portlet styles like title, frame, font etc. */
-/* Note: additional styles for specific packages (ie. calendar, survey) 
-are located in the css for that package (eg. Selva_calendar.css)  */
 
-.portlet-wrapper {
-	margin-bottom: 10px;
-}
-
-.portlet-header {
-	padding: 3px 5px 3px 5px;
-	border-top: 1px solid #fff;
-	background: #4b68a0 url(/resources/theme-zen/images/portlets/header-bg.gif) repeat-x top left;
-}
-
-.portlet-title {
-	float: left; /* comment out if portlet-controls display:none */
-	display: inline;
-	font-weight:bold;
-	color: #fff;
-	
-}
-
-.portlet-title h1 {
-	color: #fff;
-	margin: 0px;
-	font-size: 1em;
-}
-	
-.portlet-controls {
-	display: block; /* future development */
-	padding-top: 2px;
-	text-align: right;	
-}
-
-.portlet {
-	background: #FFFFFF; 
-	border: 1px solid #c8c8c8; /* color */
-	padding: 10px;
-	background: url(/resources/theme-zen/images/global/page_background.gif) repeat-x top left;
-}
-	
-.portlet ul {  
-	padding-top:0px;
-	list-style-type:disc; }
-
-.portlet ul li{
-	margin-left: 0px;
-	padding-left: 0px;
-	padding-top:0px;}
-
-/* END OF PORTLETS*/
 
 /* LISTS -----------------------------------------------------------*/
 
@@ -278,6 +134,7 @@ table.standard th {
 	padding: 12px 5px;
 	background-color: #f3f1e9;
 	font-size: .95em;
+	border-bottom: 1px solid #F0EADA;
 	
 }
 
@@ -295,11 +152,11 @@ table.standard th.rowHeader {
 	background-color: #f7efdc;
 }
 
-table.standard tr.oddRow {
+table.standard tr.oddRow, table.standard tr.oddRow th  {
 	background-color: #fbf8eb;
 }	
 
-table.standard tr.evenRow {
+table.standard tr.evenRow, table.standard tr.evenRow th {
 	background-color: #ffffff;
 }
 
@@ -381,6 +238,11 @@ a.button:hover {
 	text-align: center;	
 }
 /* END OF FOOTER*/
+
+
+.clearer, #clearer {
+	clear: both	
+}	
 
 
 /* SKIP */
