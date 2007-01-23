@@ -15,7 +15,7 @@
         </a>
       </if>
       <else>
-        <img src="/resources/theme-zen/images/global/trans.gif" width="19" height="16"/>
+        <img src="/resources/theme-zen/images/global/trans.gif" alt=" " width="19" height="16"/>
       </else>
     </div>
   </div>
