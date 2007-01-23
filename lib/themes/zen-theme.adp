@@ -14,6 +14,9 @@
 	  </else>
         </a>
       </if>
+      <else>
+        <img src="/resources/theme-zen/images/global/trans.gif" />
+      </else>
     </div>
   </div>
   <div class="portlet">
