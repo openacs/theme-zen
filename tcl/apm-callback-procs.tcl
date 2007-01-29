@@ -24,12 +24,66 @@ ad_proc -public theme_zen::apm::after_install {} {
 
 } {
 
+    # DRB: Localize!!!!
+
+    set var_list [list \
+        [list name "Zen 1 column"] \
+        [list description "Zen 1 column"] \
+        [list filename ../../theme-zen/lib/layouts/zen1]
+    ]
+    set layout_id [package_instantiate_object -var_list $var_list portal_layout]
+    set var_list [list \
+        [list layout_id $layout_id] \
+        [list region 1]
+    ]
+    package_exec_plsql -var_list $var_list portal_layout add_region
+
+    set var_list [list \
+        [list name "Zen 2 column"] \
+        [list description "Zen 2 column"] \
+        [list filename ../../theme-zen/lib/layouts/zen2]
+    ]
+    set layout_id [package_instantiate_object -var_list $var_list portal_layout]
+    set var_list [list \
+        [list layout_id $layout_id] \
+        [list region 1]
+    ]
+    package_exec_plsql -var_list $var_list portal_layout add_region
+    set var_list [list \
+        [list layout_id $layout_id] \
+        [list region 2]
+    ]
+    package_exec_plsql -var_list $var_list portal_layout add_region
+
+    set var_list [list \
+        [list name "Zen 3 column"] \
+        [list description "Zen 3 column"] \
+        [list filename ../../theme-zen/lib/layouts/zen3]
+    ]
+    set layout_id [package_instantiate_object -var_list $var_list portal_layout]
+    set var_list [list \
+        [list layout_id $layout_id] \
+        [list region 1]
+    ]
+    package_exec_plsql -var_list $var_list portal_layout add_region
+    set var_list [list \
+        [list layout_id $layout_id] \
+        [list region 2]
+    ]
+    package_exec_plsql -var_list $var_list portal_layout add_region
+    set var_list [list \
+        [list layout_id $layout_id] \
+        [list region 3]
+    ]
+    package_exec_plsql -var_list $var_list portal_layout add_region
+       
     set var_list [list \
         [list name zen] \
         [list description "Zen Theme"] \
-        [list filename /packages/theme-zen/lib/themes/zen-theme] \
-        [list resource_dir /packages/theme-zen/lib/themes/zen-theme]
+        [list filename ../../theme-zen/lib/themes/zen-theme] \
+        [list resource_dir ../../packages/theme-zen/lib/themes/zen-theme]
     ]
+
     set theme_id [package_instantiate_object -var_list $var_list portal_element_theme]
 
     set site_template_id [db_nextval acs_object_id_seq]
