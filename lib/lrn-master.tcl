@@ -4,11 +4,6 @@ set user_id [ad_get_user_id]
 set community_id [dotlrn_community::get_community_id]
 set dotlrn_url [dotlrn::get_url]
 
-if { [info exists context ] } {
-ns_log Notice "Huh? context: $context"
-}
-
-
 #----------------------------------------------------------------------
 # Display user messages
 #----------------------------------------------------------------------
@@ -73,6 +68,11 @@ if {![empty_string_p $community_id]} {
 
 if {[exists_and_not_null portal_id]} {
     set have_portal_id_p 1
+    if { [set page_num [ns_queryget page_num]] ne "" } {
+        append header_stuff [portal::get_layout_header_stuff \
+                                -portal_id $portal_id \
+                                -page_num $page_num]
+    }
 } else {
     set have_portal_id_p 0 
 }
@@ -266,9 +266,6 @@ append header_stuff {
 <link rel="stylesheet" type="text/css" href="/resources/theme-zen/css/main.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="/resources/theme-zen/css/print.css" media="print" />
 <link rel="stylesheet" type="text/css" href="/resources/theme-zen/css/handheld.css" media="handheld" />
-<link rel="stylesheet" type="text/css" href="/resources/theme-zen/css/columns/2column.css" media="screen" />
-<link rel="alternate stylesheet" type="text/css" href="/resources/theme-zen/css/columns/1column.css" title="1col" />
-<link rel="alternate stylesheet" type="text/css" href="/resources/theme-zen/css/columns/3column.css" title="3col" />
 <link rel="alternate stylesheet" type="text/css" href="/resources/theme-zen/css/highContrast.css" title="highContrast" />
 <link rel="alternate stylesheet" type="text/css" href="/resources/theme-zen/css/508.css" title="508" />
 <script type="text/javascript" src="/resources/theme-zen/js/styleswitcher.js"></script>
@@ -287,7 +284,7 @@ if { ![template::util::is_nil focus] } {
     if { [regexp {^([^.]*)\.(.*)$} $focus match form_name element_name] } {
 
         # Add safety code to test that the element exists '
-        set header_stuff "$header_stuff
+        append header_stuff "$header_stuff
           <script language=\"JavaScript\" type=\"text/javascript\">
             function acs_focus( form_name, element_name ){
                 if (document.forms == null) return;
