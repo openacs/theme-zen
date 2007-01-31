@@ -65,6 +65,9 @@ if {![empty_string_p $community_id]} {
 } else {
     set have_comm_id_p 0
 }
+if { ![info exists header_stuff] } {
+    set header_stuff ""
+}
 
 if {[exists_and_not_null portal_id]} {
     set have_portal_id_p 1

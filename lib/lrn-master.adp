@@ -1,4 +1,4 @@
-<master src="/packages/theme-zen/lib/blank-master">
+<master src="/www/blank-master">
   <property name="header_stuff">
     @header_stuff;noquote@
     @dotlrn_master__header_stuff;noquote@
@@ -40,6 +40,13 @@
             </a>
           </li>
         </if>
+		<li>
+          <a href="#" onclick="setActiveStyleSheet('1col'); return false;"
+             onkeypress="setActiveStyleSheet('1col'); return false;"
+             title="switch to 1col">
+            1col
+          </a>
+        </li>
         <li>
           <a href="#" onclick="setActiveStyleSheet('highContrast'); return false;"
              onkeypress="setActiveStyleSheet('highContrast'); return false;"
