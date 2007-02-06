@@ -122,7 +122,20 @@
         </div>
       </if>
 
+      <if @portal_page_p@ nil>
+        <div id="main">
+          <div id="main-content">
+            <div class="main-content-padding">
+      </if>
+
       <slave>
+
+      <if @portal_page_p@ nil>
+            </div> <!-- /main-content-padding -->
+          </div> <!-- /main-content -->
+        </div> <!-- /main -->
+      </if>
+
     </div> <!-- /inner-wrapper -->
   </div> <!-- /content-wrapper -->
 

@@ -71,13 +71,17 @@ if { ![info exists header_stuff] } {
 
 if {[exists_and_not_null portal_id]} {
     set have_portal_id_p 1
-    if { [set page_num [ns_queryget page_num]] ne "" } {
-        append header_stuff [portal::get_layout_header_stuff \
-                                -portal_id $portal_id \
-                                -page_num $page_num]
-    }
 } else {
     set have_portal_id_p 0 
+}
+
+if {[exists_and_not_null portal_page_p]} {
+    if { [set page_num [ns_queryget page_num]] eq "" } {
+        set page_num 0
+    }
+    append header_stuff [portal::get_layout_header_stuff \
+                            -portal_id $portal_id \
+                            -page_num $page_num]
 }
 
 # navbar vars

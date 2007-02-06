@@ -79,6 +79,47 @@ ad_proc -public theme_zen::apm::after_install {} {
         [list region 3]
     ]
     package_exec_plsql -var_list $var_list portal_layout add_region
+
+    set var_list [list \
+        [list name "Zen Thin-Thick"] \
+        [list description "Zen Thin-Thick"] \
+        [list resource_dir /resources/theme-zen/css/zen-thin-thick] \
+        [list filename ../../theme-zen/lib/layouts/zen2]
+    ]
+    set layout_id [package_instantiate_object -var_list $var_list portal_layout]
+    set var_list [list \
+        [list layout_id $layout_id] \
+        [list region 1]
+    ]
+    package_exec_plsql -var_list $var_list portal_layout add_region
+    set var_list [list \
+        [list layout_id $layout_id] \
+        [list region 2]
+    ]
+    package_exec_plsql -var_list $var_list portal_layout add_region
+
+    set var_list [list \
+        [list name "Zen Thin-Thick_Thin"] \
+        [list description "Zen Thin-Thick_thin"] \
+        [list resource_dir /resources/theme-zen/css/zen-thin-thick] \
+        [list filename ../../theme-zen/lib/layouts/zen3]
+    ]
+    set layout_id [package_instantiate_object -var_list $var_list portal_layout]
+    set var_list [list \
+        [list layout_id $layout_id] \
+        [list region 1]
+    ]
+    package_exec_plsql -var_list $var_list portal_layout add_region
+    set var_list [list \
+        [list layout_id $layout_id] \
+        [list region 2]
+    ]
+    package_exec_plsql -var_list $var_list portal_layout add_region
+    set var_list [list \
+        [list layout_id $layout_id] \
+        [list region 3]
+    ]
+    package_exec_plsql -var_list $var_list portal_layout add_region
        
     set var_list [list \
         [list name zen] \
