@@ -267,14 +267,14 @@ if { $make_navbar_p } {
 
 
 append header_stuff {
-<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-<meta name="robots" content="all" />
-<meta name="keywords" content="accessibility, portals, elearning, design" />
-<link rel="stylesheet" type="text/css" href="/resources/theme-zen/css/main.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="/resources/theme-zen/css/print.css" media="print" />
-<link rel="stylesheet" type="text/css" href="/resources/theme-zen/css/handheld.css" media="handheld" />
-<link rel="alternate stylesheet" type="text/css" href="/resources/theme-zen/css/highContrast.css" title="highContrast" />
-<link rel="alternate stylesheet" type="text/css" href="/resources/theme-zen/css/508.css" title="508" />
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="robots" content="all">
+<meta name="keywords" content="accessibility, portals, elearning, design">
+<link rel="stylesheet" type="text/css" href="/resources/theme-zen/css/main.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/resources/theme-zen/css/print.css" media="print">
+<link rel="stylesheet" type="text/css" href="/resources/theme-zen/css/handheld.css" media="handheld">
+<link rel="alternate stylesheet" type="text/css" href="/resources/theme-zen/css/highContrast.css" title="highContrast">
+<link rel="alternate stylesheet" type="text/css" href="/resources/theme-zen/css/508.css" title="508">
 <script type="text/javascript" src="/resources/theme-zen/js/styleswitcher.js"></script>
 }
 
