@@ -11,8 +11,6 @@
     </if>
     <else>
     </else>
-  </div>
- 
 
 <div id="wrapper">
   <div id="skiptocontent"><a href="#content-wrapper" title="skip to main content" accesskey="k">Skip to Main Content</a></div>
@@ -63,7 +61,7 @@
         </li> 
         <if @untrusted_user_id@ ne 0>
           <li>
-            <a href="@logout_url@" title="#acs-subsite.Logout_from_system#" access_key="L">
+            <a href="@logout_url@" title="#acs-subsite.Logout_from_system#" accesskey="L">
               #acs-subsite.Logout# 
             </a>
           </li>
