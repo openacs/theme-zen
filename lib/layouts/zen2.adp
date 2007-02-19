@@ -20,9 +20,9 @@
       
 <div id="sidebar-1">
   <div class="sidebar-1-padding">
-    <list name="element_ids_2">
+    <list name="element_ids_1">
       <include src="@element_src@"
-        element_id="@element_ids_2:item@"
+        element_id="@element_ids_1:item@"
         action_string="@action_string@"
         theme_id="@theme_id@"
         region="2"
@@ -39,9 +39,9 @@
       
   <div id="main-content">
     <div class="main-content-padding">
-      <list name="element_ids_1">
+      <list name="element_ids_2">
         <include src="@element_src@"
-                 element_id="@element_ids_1:item@"
+                 element_id="@element_ids_2:item@"
                  action_string="@action_string@"
                  theme_id="@theme_id@"
                  region="1"

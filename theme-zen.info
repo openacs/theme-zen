@@ -22,7 +22,7 @@
             <callback type="before-uninstall"  proc="theme_zen::apm::before_uninstall"/>
         </callbacks>
         <parameters>
-            <parameter datatype="string"  min_n_values="1"  max_n_values="1" name="AdditionalNavbarTabs"  default="/dotlrn/ #dotlrn.Home# /dotlrn/courses #dotlrn.Courses# /dotlrn/communities #dotlrn.Communities# /dotlrn/control-panel #dotlrn.control_panel#" description="list of URL Names pairs which will make it into additional navbar tabs"/>
+            <parameter datatype="string"  min_n_values="1"  max_n_values="1" name="AdditionalNavbarTabs"  default="/dotlrn/ #dotlrn.Home# #dotlrn.Home_Accesskey# /dotlrn/courses #dotlrn.Courses# #dotlrn.Courses_Accesskey# /dotlrn/communities #dotlrn.Communities# #dotlrn.Communities_Accesskey# /dotlrn/control-panel #dotlrn.control_panel# #dotlrn.control_panel_accesskey#" description="list of URL Names pairs which will make it into additional navbar tabs"/>
         </parameters>
 
     </version>
