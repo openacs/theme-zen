@@ -253,8 +253,8 @@ namespace eval zen {
 	    regsub -all {[^0-9]} $page_num {} page_num
 	}
 	
-	set subnavbar "<ul>\n"
 	
+        set subnavbar ""
 	db_foreach list_page_nums_select {} {
 	    if {[string equal $page_num $sort_key]} {
 		append subnavbar "\n<li class=\"sub-navigation-active\"><a href=\"$link?page_num=$sort_key\" title=\"[_ theme-zen.goto_portal_page_pretty_name]\">$pretty_name</a> </li>"
@@ -271,8 +271,10 @@ namespace eval zen {
 	    }
 	}
 
-	append subnavbar "</ul>"
-
+        if { $subnavbar eq "" } {
+            return ""
+        } else {
+            return "<ul>\n${subnavbar}\n</ul>\n"
+        }
     }
-
 }
