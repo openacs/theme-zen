@@ -100,13 +100,11 @@
     </div>
   </div>
 
-  <if @subnavbar@ not nil>
-    <div id="sub-navigation">
-      <div class="block-marker">Begin sub navigation</div>
-        @subnavbar;noquote@
-      </div>
+  <div id="sub-navigation">
+    <div class="block-marker">Begin sub navigation</div>
+      <if @subnavbar@ not nil>@subnavbar;noquote@</if>         
     </div>
-  </if>
+  </div>
 
   <div id="content-wrapper">
     <div class="block-marker">Begin main content</div>
