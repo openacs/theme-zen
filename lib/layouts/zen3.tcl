@@ -45,4 +45,7 @@ if {![exists_and_not_null return_url]} {
 
 portal::layout_elements $element_list
 
+set element_2_first_num [llength $element_ids_1] 
+set element_3_first_num [llength $element_ids_2] 
+
 ad_return_template

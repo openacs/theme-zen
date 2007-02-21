@@ -6,6 +6,8 @@
       <list name="element_ids_1">
         <include src="@element_src@"
           element_id="@element_ids_1:item@"
+          element_num="@element_ids_1:rownum@"
+          element_first_num="0"
           action_string="@action_string@"
           theme_id="@theme_id@"
           region="1"
@@ -24,6 +26,8 @@
       <list name="element_ids_2">
         <include src="@element_src@"
           element_id="@element_ids_2:item@"
+          element_num="@element_ids_2:rownum@"
+          element_first_num="@element_2_first_num@"
           action_string="@action_string@"
           theme_id="@theme_id@"
           region="2"
@@ -44,6 +48,8 @@
     <list name="element_ids_3">
       <include src="@element_src@"
         element_id="@element_ids_3:item@"
+        element_num="@element_ids_3:rownum@"
+        element_first_num="@element_3_first_num@"
         action_string="@action_string@"
         theme_id="@theme_id@"
         region="3"

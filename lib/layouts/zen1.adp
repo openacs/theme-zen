@@ -6,6 +6,8 @@
       <list name="element_ids_1">
         <include src="@element_src@" 
           element_id="@element_ids_1:item@" 
+          element_num="@element_ids_1:rownum@"
+          element_first_num="0"
           action_string=@action_string@ 
           theme_id=@theme_id@ 
           region="1" 

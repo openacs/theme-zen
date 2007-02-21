@@ -1,7 +1,7 @@
 <div class="portlet-wrapper">
   <div class="portlet-header">
     <div class="portlet-title">
-      <h1>@element_num;noquote@. @name;noquote@</h1>
+      <h1>@element_num@. @name;noquote@</h1>
     </div>
     <div class="portlet-controls">
       <if @shadeable_p@ eq "t">		
