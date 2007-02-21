@@ -260,14 +260,15 @@ if { $make_navbar_p } {
 	-post_html $extra_spaces \
         -link_all $link_all
     ]
+ns_log Notice "Huh? subnavbar: '$subnavbar'"
 } else {
-    set navbar " "
-    set subnavbar " "
+    set navbar ""
+    set subnavbar ""
 }
 
 
-append header_stuff {
-<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+append header_stuff [subst {
+<meta http-equiv="content-type" content="text/html; charset=[ad_conn charset]">
 <meta name="robots" content="all">
 <meta name="keywords" content="accessibility, portals, elearning, design">
 <link rel="stylesheet" type="text/css" href="/resources/theme-zen/css/main.css" media="screen">
@@ -276,7 +277,7 @@ append header_stuff {
 <link rel="alternate stylesheet" type="text/css" href="/resources/theme-zen/css/highContrast.css" title="highContrast">
 <link rel="alternate stylesheet" type="text/css" href="/resources/theme-zen/css/508.css" title="508">
 <script type="text/javascript" src="/resources/theme-zen/js/styleswitcher.js"></script>
-}
+}]
 
 if { [info exists text] } {
     set text [lang::util::localize $text]

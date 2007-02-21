@@ -82,8 +82,8 @@ namespace eval zen {
         set which_tab 0
         set home_tab -1
 
-	foreach {url name} [parameter::get_from_package_key -package_key "theme-zen" -parameter "AdditionalNavbarTabs" -default ""] {
-	    lappend tabs_list [list $url $name]
+	foreach {url name accesskey} [parameter::get_from_package_key -package_key "theme-zen" -parameter "AdditionalNavbarTabs" -default ""] {
+	    lappend tabs_list [list $url $name $accesskey]
             if { $current_url == $url ||
                  $current_url == "$dotlrn_url/index" && $name eq "#dotlrn.Home#" } {
                 set which_tab_selected $which_tab
@@ -95,7 +95,7 @@ namespace eval zen {
 	}
 
 	if { $sw_admin_p } {
-	    lappend tabs_list [list $dotlrn_admin_url #dotlrn.Administration#]
+	    lappend tabs_list [list $dotlrn_admin_url #dotlrn.Administration# #dotlrn.Administration_Accesskey#]
             if { [string first $dotlrn_admin_url $current_url] != -1 } {
                 set which_tab_selected $which_tab
             }
@@ -144,13 +144,14 @@ namespace eval zen {
 
         set which_tab 0
 	foreach tab_entry $tabs_list {
-            foreach {url name select_p} $tab_entry {}
+            foreach {url name accesskey} $tab_entry {}
 	    ns_log Debug "URL:: $url"
 	    ns_log Debug "NAME:: $name"
+	    ns_log Debug "ACCESSKEY:: $accesskey"
 	    if { $which_tab == $which_tab_selected } {
-		append navbar "\n<li class=\"main-navigation-active\"><a href=\"$url\" title=\"[_ theme-zen.goto_tab_name]\" accesskey=\"h\">[lang::util::localize $name]</a></li>"
+		append navbar "\n<li class=\"main-navigation-active\"><a href=\"$url\" title=\"[_ theme-zen.goto_tab_name]\" accesskey=\"$accesskey\">[lang::util::localize $name]</a></li>"
 	    } else {
-		append navbar "\n<li><a href=\"$url\" title=\"[_ theme-zen.goto_tab_name]\">[lang::util::localize $name]</a></li>"
+		append navbar "\n<li><a href=\"$url\" title=\"[_ theme-zen.goto_tab_name]\" accesskey=\"$accesskey\">[lang::util::localize $name]</a></li>"
 	    }
 	    incr which_tab 
 	}
@@ -252,8 +253,8 @@ namespace eval zen {
 	    regsub -all {[^0-9]} $page_num {} page_num
 	}
 	
-	set subnavbar "<ul>\n"
 	
+        set subnavbar ""
 	db_foreach list_page_nums_select {} {
 	    if {[string equal $page_num $sort_key]} {
 		append subnavbar "\n<li class=\"sub-navigation-active\"><a href=\"$link?page_num=$sort_key\" title=\"[_ theme-zen.goto_portal_page_pretty_name]\">$pretty_name</a> </li>"
@@ -270,8 +271,10 @@ namespace eval zen {
 	    }
 	}
 
-	append subnavbar "</ul>"
-
+        if { $subnavbar eq "" } {
+            return ""
+        } else {
+            return "<ul>\n${subnavbar}\n</ul>\n"
+        }
     }
-
 }
