@@ -260,7 +260,6 @@ if { $make_navbar_p } {
 	-post_html $extra_spaces \
         -link_all $link_all
     ]
-ns_log Notice "Huh? subnavbar: '$subnavbar'"
 } else {
     set navbar ""
     set subnavbar ""
