@@ -162,7 +162,6 @@ namespace eval zen {
 
     ad_proc -public portal_subnavbar {
         {-user_id:required}
-        {-link_control_panel:required}
         {-control_panel_text:required}
 	{-link_all 0}
         {-pre_html ""}

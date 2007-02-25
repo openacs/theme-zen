@@ -1,6 +1,7 @@
 # $Id$
 
 set user_id [ad_get_user_id] 
+set untrusted_user_id [ad_conn untrusted_user_id]
 set community_id [dotlrn_community::get_community_id]
 set dotlrn_url [dotlrn::get_url]
 
@@ -18,9 +19,7 @@ if { [string equal [ad_conn url] "/"] } {
 }
 
 # Get user information
-set sw_admin_p 0
-set user_id [ad_conn user_id]
-set untrusted_user_id [ad_conn untrusted_user_id]
+set sw_admin_p [acs_user::site_wide_admin_p -user_id $untrusted_user_id]
 if { $untrusted_user_id != 0 } {
     set user_name [person::name -person_id $untrusted_user_id]
     set pvt_home_url [ad_pvt_home]
@@ -32,8 +31,6 @@ if { $untrusted_user_id != 0 } {
 
     # Site-wide admin link
     set admin_url {}
-
-    set sw_admin_p [acs_user::site_wide_admin_p -user_id $untrusted_user_id]
 
     if { $sw_admin_p } {
         set admin_url "/acs-admin/"
@@ -51,7 +48,6 @@ if { $untrusted_user_id != 0 } {
     }
 } 
 
-
 # Who's Online
 set num_users_online [lc_numeric [whos_online::num_users]]
 set whos_online_url [subsite::get_element -element url]shared/whos-online
@@ -60,35 +56,9 @@ if {[dotlrn::user_p -user_id $user_id]} {
     set portal_id [dotlrn::get_portal_id -user_id $user_id]
 }
 
-if {![empty_string_p $community_id]} {
-    set have_comm_id_p 1
-} else {
-    set have_comm_id_p 0
-}
 if { ![info exists header_stuff] } {
     set header_stuff ""
 }
-
-if {[exists_and_not_null portal_id]} {
-    set have_portal_id_p 1
-} else {
-    set have_portal_id_p 0 
-}
-
-if {[exists_and_not_null portal_page_p]} {
-    if { [set page_num [ns_queryget page_num]] eq "" } {
-        set page_num 0
-    }
-    append header_stuff [portal::get_layout_header_stuff \
-                            -portal_id $portal_id \
-                            -page_num $page_num]
-}
-
-# navbar vars
-set show_navbar_p 1
-if {[exists_and_not_null no_navbar_p] && $no_navbar_p} {
-    set show_navbar_p 0
-} 
 
 if {![info exists link_all]} {
     set link_all 0
@@ -100,10 +70,6 @@ if {![info exists return_url]} {
     set link $return_url
 }
 
-if {![info exists link_control_panel]} {
-    set link_control_panel 1
-}
-
 if { ![string equal [ad_conn package_key] [dotlrn::package_key]] } {
     # Peter M: We are in a package (an application) that may or may not be under a dotlrn instance 
     # (i.e. in a news instance of a class)
@@ -112,13 +78,10 @@ if { ![string equal [ad_conn package_key] [dotlrn::package_key]] } {
     set link_all 1
 }
 
-if {$have_comm_id_p} {
-    # in a community or just under one in a mounted package like /calendar 
-    # get this comm's info
-    set control_panel_text "Administer"
+set control_panel_text [_ acs-subsite.Admin]
+if { $community_id ne "" } {
 
     set portal_id [dotlrn_community::get_portal_id -community_id $community_id]
-    set text [dotlrn_community::get_community_header_name $community_id] 
     set link [dotlrn_community::get_community_url $community_id]
     set admin_p [dotlrn::user_can_admin_community_p -user_id $user_id -community_id $community_id]
 
@@ -127,69 +90,7 @@ if {$have_comm_id_p} {
         set portal_id [dotlrn_community::get_non_member_portal_id -community_id $community_id]
     }
 
-    if { $have_portal_id_p && $show_navbar_p } {
-	set make_navbar_p 1
-
-    } else {
-	set make_navbar_p 0
-        set portal_id ""
-    }
-} elseif {[parameter::get -parameter community_type_level_p] == 1} {
-    set control_panel_text "Administer"
-
-    set extra_td_html ""
-    set link_all 1
-    set link [dotlrn::get_url]
-    # in a community type
-    set text \
-            [dotlrn_community::get_community_type_name [dotlrn_community::get_community_type]]
-    
-    if {$have_portal_id_p && $show_navbar_p} {
-	set make_navbar_p 1
-    } else {
-	set make_navbar_p 0
-        set portal_id ""
-    }
-} else {
-    # we could be anywhere (maybe under /dotlrn, maybe not)
-    set control_panel_text "My Account"
-    set link "[dotlrn::get_url]/"
-    set community_id ""
-    set text ""
-    set make_navbar_p 1
-    if {$have_portal_id_p && $show_navbar_p} {
-    } else {
-	set make_navbar_p 0
-	set portal_id ""
-    }
-}
-
-# Set up some basic stuff
-set user_id [ad_get_user_id]
-if { [ad_conn untrusted_user_id] == 0 } {
-    set user_name {}
-} else {
-    set user_name [acs_user::get_element -user_id [ad_conn untrusted_user_id] -element name]
-}
-
-if {![exists_and_not_null title]} {
-    set title [ad_system_name]
-}
-
-if {[empty_string_p [dotlrn_community::get_parent_community_id -package_id [ad_conn package_id]]]} {
-    set parent_comm_p 0
-} else {
-    set parent_comm_p 1
-}
-
-set community_id [dotlrn_community::get_community_id]
-
-set control_panel_text [_ "dotlrn.control_panel"]
-
-if {![empty_string_p $community_id]} {
-    # in a community or just under one in a mounted package like /calendar 
     set comm_type [dotlrn_community::get_community_type_from_community_id $community_id]
-    set control_panel_text [_ acs-subsite.Admin]
 
     if {[dotlrn_community::subcommunity_p -community_id $community_id]} {
 	#The colors for a subgroup are set by the parent group with a few overwritten.
@@ -231,18 +132,47 @@ if {![empty_string_p $community_id]} {
     }
 
 } elseif {[parameter::get -parameter community_type_level_p] == 1} {
-    # in a community type (subject)
+    set extra_td_html ""
+    set link_all 1
+    set link [dotlrn::get_url]
+    # in a community type
     set text \
             [dotlrn_community::get_community_type_name [dotlrn_community::get_community_type]]
 } else {
-    # under /dotlrn
-
+    # we could be anywhere (maybe under /dotlrn, maybe not)
+    set link "[dotlrn::get_url]/"
+    set community_id ""
     set text ""
 }
 
-if { $make_navbar_p } {
-	set link_control_panel 0
-  
+if {[exists_and_not_null portal_page_p]} {
+    if { [set page_num [ns_queryget page_num]] eq "" } {
+        set page_num 0
+    }
+    append header_stuff [portal::get_layout_header_stuff \
+                            -portal_id $portal_id \
+                            -page_num $page_num]
+}
+
+# Set up some basic stuff
+if { [ad_conn untrusted_user_id] == 0 } {
+    set user_name {}
+} else {
+    set user_name [acs_user::get_element -user_id [ad_conn untrusted_user_id] -element name]
+}
+
+if {![exists_and_not_null title]} {
+    set title [ad_system_name]
+}
+
+if {[empty_string_p [dotlrn_community::get_parent_community_id -package_id [ad_conn package_id]]]} {
+    set parent_comm_p 0
+} else {
+    set parent_comm_p 1
+}
+
+if { !([exists_and_not_null no_navbar_p] && $no_navbar_p) &&
+     [exists_and_not_null portal_id] } {
     
     if {[exists_and_not_null community_id]} {
 	set youarehere "[dotlrn_community::get_community_name $community_id]"
@@ -254,7 +184,6 @@ if { $make_navbar_p } {
     set navbar [zen::portal_navbar]
     set subnavbar [zen::portal_subnavbar \
         -user_id $user_id \
-        -link_control_panel $link_control_panel \
         -control_panel_text $control_panel_text \
 	-pre_html "$extra_spaces" \
 	-post_html $extra_spaces \
