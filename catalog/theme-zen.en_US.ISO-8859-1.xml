@@ -17,4 +17,10 @@
   <msg key="Tools">Tools</msg>
   <msg key="website_logo">Website Logo</msg>
   <msg key="You_are_here">You are here</msg>
+  <msg key="Zen_1_column">Zen One Column</msg>
+  <msg key="Zen_2_column">Zen Two Column</msg>
+  <msg key="Zen_3_column">Zen Three Column</msg>
+  <msg key="Zen_thin_thick">Zen Thin-Thick</msg>
+  <msg key="Zen_thin_thick_thin">Zen Thin-Thick-Thin</msg>
+  <msg key="Zen_theme">Zen Theme</msg>
 </message_catalog>

@@ -27,8 +27,8 @@ ad_proc -public theme_zen::apm::after_install {} {
     # DRB: Localize!!!!
 
     set var_list [list \
-        [list name "Zen 1 column"] \
-        [list description "Zen 1 column"] \
+        [list name "#theme_zen.Zen_1_column#"] \
+        [list description "#theme_zen.Zen_1_column#"] \
         [list resource_dir /resources/theme-zen/css/zen1] \
         [list filename ../../theme-zen/lib/layouts/zen1]
     ]
@@ -40,8 +40,8 @@ ad_proc -public theme_zen::apm::after_install {} {
     package_exec_plsql -var_list $var_list portal_layout add_region
 
     set var_list [list \
-        [list name "Zen 2 column"] \
-        [list description "Zen 2 column"] \
+        [list name "#theme_zen.Zen_2_column#"] \
+        [list description "#theme_zen.Zen_2_column#"] \
         [list resource_dir /resources/theme-zen/css/zen2] \
         [list filename ../../theme-zen/lib/layouts/zen2]
     ]
@@ -58,8 +58,8 @@ ad_proc -public theme_zen::apm::after_install {} {
     package_exec_plsql -var_list $var_list portal_layout add_region
 
     set var_list [list \
-        [list name "Zen 3 column"] \
-        [list description "Zen 3 column"] \
+        [list name "#theme_zen.Zen_3_column#"] \
+        [list description "#theme_zen.Zen_3_column#"] \
         [list resource_dir /resources/theme-zen/css/zen3] \
         [list filename ../../theme-zen/lib/layouts/zen3]
     ]
@@ -81,8 +81,8 @@ ad_proc -public theme_zen::apm::after_install {} {
     package_exec_plsql -var_list $var_list portal_layout add_region
 
     set var_list [list \
-        [list name "Zen Thin-Thick"] \
-        [list description "Zen Thin-Thick"] \
+        [list name "#theme_zen.Zen_thin_thick#"] \
+        [list description "#theme_zen.Zen_thin_thick#"] \
         [list resource_dir /resources/theme-zen/css/zen-thin-thick] \
         [list filename ../../theme-zen/lib/layouts/zen2]
     ]
@@ -99,8 +99,8 @@ ad_proc -public theme_zen::apm::after_install {} {
     package_exec_plsql -var_list $var_list portal_layout add_region
 
     set var_list [list \
-        [list name "Zen Thin-Thick_Thin"] \
-        [list description "Zen Thin-Thick_thin"] \
+        [list name "#theme_zen.Zen_thin_thick_thin#"] \
+        [list description "#theme_zen.Zen_thin_thick_thin#"] \
         [list resource_dir /resources/theme-zen/css/zen-thin-thick] \
         [list filename ../../theme-zen/lib/layouts/zen3]
     ]
@@ -123,7 +123,7 @@ ad_proc -public theme_zen::apm::after_install {} {
        
     set var_list [list \
         [list name zen] \
-        [list description "Zen Theme"] \
+        [list description "#theme_zen.Zen_Theme#"] \
         [list filename ../../theme-zen/lib/themes/zen-theme]
     ]
 
