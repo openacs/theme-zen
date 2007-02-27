@@ -40,21 +40,21 @@
         </if>
 		<li>
           <a href="#" onclick="setActiveStyleSheet('1col'); return false;"
-             onkeypress="setActiveStyleSheet('1col'); return false;"
+             onclick="setActiveStyleSheet('1col'); return false;"
              title="switch to 1col">
             1col
           </a>
         </li>
         <li>
           <a href="#" onclick="setActiveStyleSheet('highContrast'); return false;"
-             onkeypress="setActiveStyleSheet('highContrast'); return false;"
+             onclick="setActiveStyleSheet('highContrast'); return false;"
              title="switch to High Contrast">
             HC
           </a>
         </li> 
         <li>
           <a href="#" onclick="setActiveStyleSheet('508'); return false;"
-             onkeypress="setActiveStyleSheet('508'); return false;"
+             onclick="setActiveStyleSheet('508'); return false;"
              title="switch to 508">
             ACC
           </a> |
