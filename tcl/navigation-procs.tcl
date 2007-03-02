@@ -149,7 +149,7 @@ namespace eval zen {
 	    ns_log Debug "NAME:: $name"
 	    ns_log Debug "ACCESSKEY:: $accesskey"
 	    if { $which_tab == $which_tab_selected } {
-		append navbar "\n<li class=\"main-navigation-active\"><a href=\"$url\" title=\"[_ theme-zen.goto_tab_name]\" accesskey=\"$accesskey\">[lang::util::localize $name]</a></li>"
+		append navbar "\n<li id=\"main-navigation-active\"><a href=\"$url\" title=\"[_ theme-zen.goto_tab_name]\" accesskey=\"$accesskey\">[lang::util::localize $name]</a></li>"
 	    } else {
 		append navbar "\n<li><a href=\"$url\" title=\"[_ theme-zen.goto_tab_name]\" accesskey=\"$accesskey\">[lang::util::localize $name]</a></li>"
 	    }
@@ -256,7 +256,7 @@ namespace eval zen {
         set subnavbar ""
 	db_foreach list_page_nums_select {} {
 	    if {[string equal $page_num $sort_key]} {
-		append subnavbar "\n<li class=\"sub-navigation-active\"><a href=\"$link?page_num=$sort_key\" title=\"[_ theme-zen.goto_portal_page_pretty_name]\">$pretty_name</a> </li>"
+		append subnavbar "\n<li id=\"sub-navigation-active\"><a href=\"$link?page_num=$sort_key\" title=\"[_ theme-zen.goto_portal_page_pretty_name]\">$pretty_name</a> </li>"
 	    } else {
 		append subnavbar "\n<li><a href=\"$link?page_num=$sort_key\" title=\"[_ theme-zen.goto_portal_page_pretty_name]\">$pretty_name</a> </li>"
 	    }
