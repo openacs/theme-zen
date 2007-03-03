@@ -9,7 +9,9 @@ ad_page_contract {
     {zen_id:naturalnum,optional 42}
 }
 
-ad_form -name "your_zen_level" -method post -html {enctype multipart/form-data class margin-form} -fieldset {{title "T1" class "C1"} "This really works!!"} -form {
+ad_form -name "your_zen_level" -method post -html {enctype multipart/form-data class margin-form} -fieldset {{title "T1" class "C1"} \
+														 "<b>Form using margin-form class</b>"} \
+    -form {
     {zen_id:key}
     {zen_attachment:text(file),optional\
 	 {label "template::widget::attachment"}}
