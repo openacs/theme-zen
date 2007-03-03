@@ -17,7 +17,7 @@ body {
 #content-wrapper {
 	clear: both;
 	border-top: 1px solid #fff;
-	/*background: url(/resources/theme-zen/images/global/page_background.gif) repeat-x top left; */
+	padding-bottom: 75px;
 }
 
 
@@ -27,7 +27,7 @@ body {
 h1 { 
 	font-size: 1.2em; 
 	font-weight:bold;
-	color: #6E7A6A; 
+	color: #646c61; 
 }
 	
 h2 { 
@@ -57,6 +57,10 @@ a:hover {
 	text-decoration:underline;
 	background: #f3f1e9;
 }
+
+
+.center {text-align: center;}
+.small {font-size: x-small;}
 
 /* END OF STANDARD TAGS */
 
@@ -196,6 +200,7 @@ table.form .evenRow {
 /*  BUTTONS -----------------------------------------------------------*/
 
 a.button { 
+  background:url("/resources/theme-zen/images/global/button-background.gif") repeat-x;
   font-size: .85em;
   border: solid 1px #000;
   background-color: #e1e1e1;
@@ -206,6 +211,7 @@ a.button {
 }
 
 a.button:hover { 
+  background:url("/resources/theme-zen/images/global/button-background-hover.gif") repeat-x;
   text-decoration: underline;
   background-color: #4b68a0;
   color: #fff;
@@ -217,11 +223,27 @@ a.button:hover {
 	border-right: 1px solid #666666;
 }
 
+.admin-button-bar {
+	float: right;
+	display:none;
+}
+
+.admin-button-bar a.button { 
+  font-size: .85em;
+  border: double 3px #000;
+  background-color: #e1e1e1;
+  text-align: center; 
+  padding: 4px 8px;
+  color: #000;
+  text-decoration: none;
+}
+
 a img {
 	border: 0px;
 }
 
 /* END OF BUTTONS */
+
 
 /* FOOTER -----------------------------------------------------------*/
 #footer {
@@ -262,4 +284,21 @@ a img {
 	position:static;
 	width:auto;
 	height:auto;
+}
+
+.screen-reader-only {
+	display: none;
+}
+
+
+
+
+#sidebar-1-sim {
+	float: right;
+	width: 49%;
+}
+
+#main-content-sim {
+	float: left;
+	width: 50%;
 }
