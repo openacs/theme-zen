@@ -29,26 +29,24 @@ ad_form -name "your_zen_level" -method post -html {enctype multipart/form-data c
 	 {legendtext "Checkbox fieldset legend with class"}\
 	 {legend {class "myclass" id "myid"}}\
 	 {fieldset {class "myclass" id "myid"}}} 
+    {-section "sec1" {legendtext "Section I Title"}}
     {zen_comment:text(comment)\
 	 {label "template::widget::comment"}\
 	 {value "Please enter your comments here on what reaching nirvana will mean for you."}\
-	 {html {rows 7 cols 50}}\
-	 {section "Section Title I"}}
+	 {html {rows 7 cols 50}}}
     {zen_currency:text(currency),optional\
 	 {label "template::widget::currency (cost of nirvana)"}\
-	 {value {"" "10000" "00"}}\
-	 {section "Section Title I"}}
+	 {value {"" "10000" "00"}}}
     {zen_date:date,to_sql(sql_date),from_sql(sql_date) {label "template::widget::date "} {format "Mon/DD/YYYY HH12:MI AM"} {help}}
     {zen_file:text(file),optional\
 	 {label "template::widget::file"}}
     {zen_hidden:text(hidden)\
 	 {label "template::widget::hidden"}\
-	 {value "42"}\
-	 {section "Section Title I"}}
+	 {value "42"}}
     {zen_inform:text(inform)\
 	 {label "template::widget::inform"}\
-	 {value {"Are you informed on being zen?"}}\
-	 {section "Section Title I"}}
+	 {value {"Are you informed on being zen?"}}}
+    {-section ""}
     {zen_multiselect:text(multiselect)\
 	 {label "template::widget::multiselect"}\
 	 {options {"mark" "emma" "avni" "carl" "don"}}}
@@ -74,11 +72,10 @@ ad_form -name "your_zen_level" -method post -html {enctype multipart/form-data c
 	 {value "You will submit"}}
     {zen_text:text(text),optional,nospell\
 	 {label "template::widget::text"}\
-	 {help_text {"Your identification tag number"}}\
-	 {section "Section Title I"}}
+	 {help_text {"Your identification tag number"}}}
+    {-section "sec2" {legendtext "Section 2 Title"}}
     {zen_textarea:text(textarea),optional,nospell\
 	 {label "template::widget::textarea"}\
 	 {help_text {"Please describe your desired state of being"}}\
-	 {html {rows 7 cols 50}}\
-	 {section "Section Title II"}}
+	 {html {rows 7 cols 50}}}
 }
