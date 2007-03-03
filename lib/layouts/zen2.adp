@@ -1,4 +1,5 @@
 <div id="main">
+	
   <div id="main-content">
     <div class="main-content-padding">
       <list name="element_ids_2">
@@ -18,7 +19,6 @@
       </list>
     </div> <!-- /main-content-padding -->
   </div> <!-- /main-content -->
-</div> <!-- /main -->
 
 <div id="sidebar-1">
   <div class="sidebar-1-padding">
@@ -39,4 +39,6 @@
     </list>
   </div> <!-- /sidebar-1-padding -->
 </div> <!-- /sidebar-1 -->
+
+</div> <!-- /main -->
 
