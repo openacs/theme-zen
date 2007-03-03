@@ -208,6 +208,7 @@ a.button {
   padding: 4px 8px;
   color: #000;
   text-decoration: none;
+  line-height: 2.5em;
 }
 
 a.button:hover { 
