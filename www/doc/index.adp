@@ -1,9 +1,9 @@
 <master>
-<property name="title">Project Zen Documentation</property>
-<property name="context">Project Zen Documentation</property>
+<property name="title">{Project Zen Documentation}</property>
+<property name="context">{Project Zen Documentation}</property>
 
 <ul>
-<li>Examples
+<li><b>Examples</b>
 	<ul>
 		<li><a href="forms/">Forms</a></li>
 		<li><a href="lists/">Lists</a></li>
