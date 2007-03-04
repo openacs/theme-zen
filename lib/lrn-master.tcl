@@ -206,7 +206,6 @@ append header_stuff [subst {
 <link rel="alternate stylesheet" type="text/css" href="/resources/theme-zen/css/508.css" title="508">
 <link rel="alternate stylesheet" type="text/css" href="/resources/theme-zen/css/admin.css" title="admin">
 <script type="text/javascript" src="/resources/theme-zen/js/styleswitcher.js"></script>
-<script type="text/javascript" src="/resources/theme-zen/js/goto.js"></script>
 }]
 
 if { [info exists text] } {
