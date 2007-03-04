@@ -97,7 +97,6 @@
   <div id="main-navigation">
     <div class="block-marker">Begin main navigation</div>
       <if @navbar@ not nil>@navbar;noquote@</if> 
-    </div>
   </div>
 
   <if @subnavbar@ not nil>
@@ -116,7 +115,7 @@
         <div id="alert-message">
           <ul>
             <multiple name="user_messages">
-              <li><strong>@user_messages.message;noquote@</strong></li>
+              <div class="alert"><strong>@user_messages.message;noquote@</strong></div>
             </multiple>
           </ul>
         </div>
