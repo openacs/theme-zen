@@ -210,7 +210,6 @@ a.button {
   text-decoration: none;
   line-height: 2.5em;
   white-space: nowrap;
- 
 }
 
 a.button:hover { 
@@ -221,7 +220,6 @@ a.button:hover {
 }
 
 .button {
-	white-space: nowrap;
 	text-decoration: underline;
 	padding-right: 5px;
 	border-right: 1px solid #666666;

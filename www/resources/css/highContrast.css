@@ -248,6 +248,7 @@ table.form .evenRow {
 /*  BUTTONS -----------------------------------------------------------*/
 
 a.button { 
+  background:url("/resources/theme-zen/images/global/trans.gif") repeat-x;
   font-size: 1em;
   border: solid 1px #ffffff;
   background-color: #222222;
@@ -255,12 +256,16 @@ a.button {
   padding: 4px 8px;
   color: #ffffff;
   text-decoration: underline;
+ 
+
 }
 
 a.button:hover { 
+  background:url("/resources/theme-zen/images/global/trans.gif") repeat-x;
   text-decoration: underline;
   background-color: #ffffff;
   color: #222222;
+
 }
 
 .button {
@@ -277,7 +282,26 @@ a.button:hover {
 
 /* PACKAGE SPECIFIC -----------------------------------------------------------*/
 
+/* LISTS -----------------------------------------------------------*/
 
+tr.list-header {
+  background-color: #111111; 
+}
+tr.list-subheader {
+  background-color: #222222; 
+}
+tr.list-even {
+  background-color: #555555;
+}
+tr.list-odd {
+  background-color: #222222;
+}
+tr.list-spacer {
+  background-color: #f9f9f9;
+}
+
+
+/* END OF LISTS */
 
 /* FORUMS -----------------------------------------------------------*/
 
@@ -297,6 +321,19 @@ a.button:hover {
 }
 
 
+#forum-thread .subject {
+        background: #222222;
+}
 
+#forum-thread .odd {
+        background: #222222;
+}
 
+#forum-thread .even {
+        background: #111111;
+}
+
+#forum-thread .subject .reference { 
+        color: #dbdbb0;
+}
 

@@ -19,3 +19,15 @@
 	height:25px;
 	overflow:hidden;
 }
+
+.screen-reader-only {
+	display: inline;
+}
+
+/*a:before {
+	content: " [ ";
+}
+
+a:after {
+	content: " ] ";
+}*/

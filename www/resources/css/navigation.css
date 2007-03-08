@@ -29,7 +29,7 @@
 	text-decoration:none;
 	font-weight:bold;
 	font-size: .95em;
-	color:#757575;
+	color:#666666;
 }
 	
 
@@ -78,7 +78,7 @@
 #sub-navigation a {
 	float:left;
 	display:block;
-    color:#757575;
+    color:#666666;
     padding:4px 0px 6px 0px;
     text-decoration: none;
     font-weight:bold;

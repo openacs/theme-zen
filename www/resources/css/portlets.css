@@ -18,10 +18,15 @@ are located in the css for that package (eg. Selva_calendar.css)  */
 	display: inline;
 	font-weight:bold;
 	color: #fff;
-	
 }
 
-.portlet-title h1 {
+.portlet-title-no-controls {
+	display: inline;
+	font-weight:bold;
+	color: #fff;
+}
+
+.portlet-title h1, .portlet-title-no-controls h1 {
 	color: #fff;
 	margin: 0px;
 	font-size: 1em;
@@ -31,6 +36,9 @@ are located in the css for that package (eg. Selva_calendar.css)  */
 	display: block; /* future development */
 	padding-top: 2px;
 	text-align: right;	
+}
+.portlet-controls img {
+	border: 0px;
 }
 
 .portlet {
