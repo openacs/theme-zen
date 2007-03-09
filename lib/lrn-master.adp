@@ -99,8 +99,7 @@
   <if @subnavbar@ not nil>
     <div id="sub-navigation">
       <div class="block-marker">Begin sub navigation</div>
-        @subnavbar;noquote@
-      </div>
+      @subnavbar;noquote@
     </div>
   </if>
 
