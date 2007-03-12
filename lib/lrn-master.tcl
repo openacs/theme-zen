@@ -149,7 +149,7 @@ if {[exists_and_not_null portal_page_p]} {
     if { [set page_num [ns_queryget page_num]] eq "" } {
         set page_num 0
     }
-    append header_stuff [portal::get_layout_header_stuff \
+    append header_stuff [portal::get_page_header_stuff \
                             -portal_id $portal_id \
                             -page_num $page_num]
 }
