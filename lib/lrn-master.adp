@@ -1,4 +1,4 @@
-<master src="/www/blank-master">
+<master src="/www/blank-compat">
   <property name="header_stuff">
     @header_stuff;noquote@
     @dotlrn_master__header_stuff;noquote@
