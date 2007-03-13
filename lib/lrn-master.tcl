@@ -220,7 +220,7 @@ if { ![template::util::is_nil focus] } {
     if { [regexp {^([^.]*)\.(.*)$} $focus match form_name element_name] } {
 
         # Add safety code to test that the element exists '
-        append header_stuff "$header_stuff
+        append header_stuff "
           <script language=\"JavaScript\" type=\"text/javascript\">
             function acs_focus( form_name, element_name ){
                 if (document.forms == null) return;
