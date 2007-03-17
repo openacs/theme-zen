@@ -1,15 +1,11 @@
 .portlet-header {
-	background: #75b93e; /* color */
-}
-
-.portlet {
-	border: 1px solid #75b93e; /* color */
+	background: #6aa364 url(/resources/theme-zen/images/color-green/portlet-header-bg.gif) repeat-x top left;
 }
 
 #main-navigation #active {
-	background-image:url("/resources/theme-zen/images/navigation/green/left_on.gif");
+	background-image:url("/resources/theme-zen/images/color-green/main-navigation-active-left.gif");
 }
 	
 #main-navigation #active a {
-	background-image:url("/resources/theme-zen/images/navigation/green/right_on.gif");
+	background-image:url("/resources/theme-zen/images/color-green/main-navigation-active-right.gif");
 }
