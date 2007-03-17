@@ -27,6 +27,7 @@ ad_form -name "your_zen_level" -method post -html {enctype multipart/form-data c
     {zen_checkbox:text(checkbox),multiple,optional\
 	 {label "template::widget::checkbox"}\
 	 {options {{Uncertain u} {"Somewhat zen" sz} {"Chaotic" ch} {"Calm" c} {"Fully zen" fz}}}} 
+    {-section "sec1" {legendtext "Section I Title"}}
     {zen_comment:text(comment)\
 	 {label "template::widget::comment"}\
 	 {value "Please enter your comments here on what reaching nirvana will mean for you."}\
@@ -68,6 +69,7 @@ ad_form -name "your_zen_level" -method post -html {enctype multipart/form-data c
     {zen_text:text(text),optional,nospell\
 	 {label "template::widget::text"}\
 	 {help_text {"Your identification tag number"}}}
+    {-section "sec2" {legendtext "Section 2 Title"}}
     {zen_textarea:text(textarea),optional,nospell\
 	 {label "template::widget::textarea"}\
 	 {help_text {"Please describe your desired state of being"}}\
