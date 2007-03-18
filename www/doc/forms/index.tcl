@@ -24,13 +24,13 @@ ad_form -name "your_zen_level" -method post -html {enctype multipart/form-data c
     {zen_category:text(category)\
 	 {label "template::widget::category"}\
 	 {value "Category"}\
-	 {category_tree_id 69519}}
+	 {category_tree_id 3064}}
     {zen_checkbox:text(checkbox),multiple,optional\
 	 {label "template::widget::checkbox"}\
 	 {options {{Uncertain u} {"Somewhat zen" sz} {"Chaotic" ch} {"Calm" c} {"Fully zen" fz}}}\
 	 {legendtext "Checkbox fieldset legend with class"}\
 	 {legend {class "myclass" id "myid"}}\
-	 {fieldset {class "myclass" id "myid"}}} 
+	 {fieldset {class "myfieldsetclass" id "myfieldsetid"}}} 
     {-section "sec1" {legendtext "Section I Title"}}
     {zen_comment:text(comment)\
 	 {label "template::widget::comment"}\
@@ -56,7 +56,7 @@ ad_form -name "your_zen_level" -method post -html {enctype multipart/form-data c
 	 {label "template::widget::password"}}
     {zen_radio:text(radio)\
 	 {label "template::widget::radio"}\
-	 {options {"baccus" "blesius" "khatri" "raffenne" "wylie"}}\
+	 {options {{"baccus" "don"} {"blesius" "carl"} {"khatri" "avni"} {"raffenne" "emma"} {"wylie" "mark"}}}\
 	 {legendtext "Radio fieldset legend with no class"}}
     {zen_richtext:text(richtext)\
 	 {label "template::widget::richtext"}\
