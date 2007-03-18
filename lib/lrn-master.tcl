@@ -177,7 +177,7 @@ if { !([exists_and_not_null no_navbar_p] && $no_navbar_p) &&
     if {[exists_and_not_null community_id]} {
 	set youarehere "[dotlrn_community::get_community_name $community_id]"
     } else {
-	set youarehere "[_ theme-selva.MySpace]"
+	set youarehere "[_ theme-zen.MySpace]"
     }
 
     set extra_spaces "<img src=\"/resources/dotlrn/spacer.gif\" alt=\"\" border=0 width=15>"    
@@ -194,6 +194,17 @@ if { !([exists_and_not_null no_navbar_p] && $no_navbar_p) &&
     set subnavbar ""
 }
 
+# DRB: Hack to ensure that subgroups keep the same color as their ultimate club or
+# class parent.  A top-level community that's not a class or club will keep the
+# top-level Selva colors.
+
+if { [string match /dotlrn/clubs/* [ad_conn url]] } {
+    set css_url [parameter::get_from_package_key -package_key "theme-zen" -parameter "communityCssUrl" -default "/resources/theme-zen/Selva/turquoise/Selva.css"]
+} elseif { [string match /dotlrn/classes/* [ad_conn url]] } {
+    set css_url [parameter::get_from_package_key -package_key "theme-zen" -parameter "courseCssUrl" -default "/resources/theme-zen/Selva/green/Selva.css"]
+} else {
+    set css_url [parameter::get_from_package_key -package_key "theme-zen" -parameter "cssUrl" -default "/resources/theme-zen/Selva/default/Selva.css"]
+}
 
 append header_stuff [subst {
 <meta http-equiv="content-type" content="text/html; charset=[ad_conn charset]">
@@ -202,6 +213,7 @@ append header_stuff [subst {
 <link rel="stylesheet" type="text/css" href="/resources/theme-zen/css/main.css" media="screen">
 <link rel="stylesheet" type="text/css" href="/resources/theme-zen/css/print.css" media="print">
 <link rel="stylesheet" type="text/css" href="/resources/theme-zen/css/handheld.css" media="handheld">
+<link rel="stylesheet" type="text/css" href="$css_url" media="all">
 <link rel="alternate stylesheet" type="text/css" href="/resources/theme-zen/css/highContrast.css" title="highContrast">
 <link rel="alternate stylesheet" type="text/css" href="/resources/theme-zen/css/508.css" title="508">
 <script type="text/javascript" src="/resources/theme-zen/js/styleswitcher.js"></script>
