@@ -29,6 +29,8 @@ ad_proc zen::update_dotlrn::update {
             db_1row get_new_layout_id {}
             db_dml update {}
         }
+        db_1row get_zen_theme_id {}
+        db_dml update_portal_themes {}
     }
 }
 

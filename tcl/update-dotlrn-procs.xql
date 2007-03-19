@@ -28,4 +28,23 @@
     </querytext>
   </fullquery>
     
+            db_1row get_zen_theme_id {}
+            db_dml update_portal_themes {}
+
+  <fullquery name="zen::update_dotlrn::update.get_zen_theme_id">
+    <querytext>
+      select theme_id
+      from portal_element_themes
+      where name = 'zen'
+    </querytext>
+  </fullquery>
+
+    
+  <fullquery name="zen::update_dotlrn::update.update_portal_themes">
+    <querytext>
+      update portals
+      set theme_id = :theme_id
+    </querytext>
+  </fullquery>
+    
 </queryset>

@@ -24,8 +24,6 @@ ad_proc -public theme_zen::apm::after_install {} {
 
 } {
 
-    # DRB: Localize!!!!
-
     set var_list [list \
         [list name "#theme-zen.Zen_1_column#"] \
         [list description "#theme-zen.Zen_1_column#"] \
@@ -124,7 +122,8 @@ ad_proc -public theme_zen::apm::after_install {} {
     set var_list [list \
         [list name zen] \
         [list description "#theme-zen.Zen_Theme#"] \
-        [list filename ../../theme-zen/lib/themes/zen-theme]
+        [list filename ../../theme-zen/lib/themes/zen-theme] \
+        [list resource_dir ../../theme-zen/lib/themes/zen-theme]
     ]
 
     set theme_id [package_instantiate_object -var_list $var_list portal_element_theme]
