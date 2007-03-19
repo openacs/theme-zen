@@ -106,10 +106,13 @@ namespace eval zen {
             set type [dotlrn_community::get_community_type_from_community_id $community_id]
             if { $type eq "dotlrn_community" || $type eq "dotlrn_pers_community" } {
                  set community_message_key "#dotlrn.subcommunities_pretty_name#"
+                 set community_access_key #dotlrn.subcommunities_access_key#
             } elseif { $type eq "dotlrn_club" } {
                  set community_message_key "#dotlrn.clubs_pretty_name#"
+                 set community_access_key #dotlrn.club_access_key#
             } else {
                  set community_message_key "#dotlrn.dotlrn_class_instance_pretty_name#"
+                 set community_access_key #dotlrn.dotlrn_class_instance_access_key#
             }
 
 		if { [parameter::get_from_package_key -package_key "theme-zen" -parameter "SmallTitleP" -default "0"] } {
@@ -118,7 +121,7 @@ namespace eval zen {
 			set community_message_key [dotlrn_community::get_community_name $community_id]
 		} 
 
-	    lappend tabs_list [list [dotlrn_community::get_community_url $community_id] $community_message_key]
+	    lappend tabs_list [list [dotlrn_community::get_community_url $community_id] $community_message_key $community_access_key]
             set which_tab_selected $which_tab
             incr which_tab
 	} 
