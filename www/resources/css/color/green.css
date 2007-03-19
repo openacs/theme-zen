@@ -2,10 +2,10 @@
 	background: #6aa364 url(/resources/theme-zen/images/color-green/portlet-header-bg.gif) repeat-x top left;
 }
 
-#main-navigation #active {
+#main-navigation #main-navigation-active {
 	background-image:url("/resources/theme-zen/images/color-green/main-navigation-active-left.gif");
 }
 	
-#main-navigation #active a {
+#main-navigation #main-navigation-active a {
 	background-image:url("/resources/theme-zen/images/color-green/main-navigation-active-right.gif");
 }
