@@ -3,7 +3,7 @@
 # insert into order_lines values (2,1,200,'Oranges', 20.3);
 # insert into order_lines values (3,1,300,'Bananas', 30.4);
 # insert into order_lines values (4,1,400,'Grapefruit', 40.5);
-# insert into order_lines values(5,1,,'Strawberry',1.6);
+# insert into order_lines values(5,1,null,'Strawberry',1.6);
 
 set order_id 1
 #  display_eval {[lc_sepfmt [expr [expr [empty_string_p [string trim $quantity]]?0:$quantity] *$item_price]]}
