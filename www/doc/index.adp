@@ -14,7 +14,7 @@
 			</ul>
 		</li>
 			
-		<li><a href="lists/">Lists</a></li>
+		<li><a href="lists/">Lists</a> (not validated)</li>
 		<li>Tests for event handlers:
 		<ul>
 			<li><a href="tests/calendar">Calendar</a></li>
