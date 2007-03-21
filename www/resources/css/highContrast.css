@@ -171,80 +171,6 @@ main-navigation {
 /* END OF ALERT MESSAGE */
 
 
-/*  TABLES -----------------------------------------------------------*/
-
-table.standard {
-	margin: 0;
-	padding: 0;
-	border: 1px solid #ffffff;
-	background: #fff;
-}
-
-table.standard th {
-	padding: 12px 5px;
-	background-color: #111111;
-	font-size: .95em;
-	
-}
-
-table.standard tr td {
-	margin: 0 0 0 0;
-	padding: 12px 5px;
-	border-bottom: 0px solid #ffffff;
-}
-
-table.standard tfoot tr td {
-	background: #444444;
-}
-
-table.standard th.rowHeader {
-	background-color: #222222;
-}
-
-table.standard tr.oddRow, table.standard tr.oddRow th  {
-	background-color: #555555;
-}	
-
-table.standard tr.evenRow, table.standard tr.evenRow th  {
-	background-color: #333333;
-}
-
-
-
-table.form {
-	margin: 0;
-	padding: 0;
-	border: 1px solid #ffffff;
-	background: #fff;
-}
-
-table.form th, table.form legend {
-	text-align: right;
-	font-size: .95em;
-	padding: 10px 15px;
-	
-}
-
-table.form tr td {
-	margin: 0 0 0 0;
-	padding: 10px 15px;
-}
-
-table.form th.rowHeader {
-	background-color: #222222;
-}
-
-table.form .oddRow {
-	background-color: #555555;
-}	
-
-table.form .evenRow {
-	background-color: #222222;
-}
-
-
-/* END OF TABLES */
-
 /*  BUTTONS -----------------------------------------------------------*/
 
 a.button { 
@@ -284,24 +210,36 @@ a.button:hover {
 
 /* LISTS -----------------------------------------------------------*/
 
-tr.list-header {
+.list-table tr.list-header {
   background-color: #111111; 
 }
-tr.list-subheader {
-  background-color: #222222; 
-}
-tr.list-even {
+.list-table tr.even, .list-tiny tr.even {
   background-color: #555555;
 }
-tr.list-odd {
+.list-table tr.odd, .list-tiny tr.odd {
   background-color: #222222;
 }
-tr.list-spacer {
-  background-color: #f9f9f9;
+th.list-table, th.list-table-narrow, .list-table th {
+	border-bottom-color: #ffffff;
+}
+td.list-table, td.list-table-narrow, .list-table td {
+	border-bottom-color: #ffffff;
+}
+tr.last td {
+  border-bottom-color: #ffffff;
 }
 
 
 /* END OF LISTS */
+
+/* FORMS */
+.form-required-mark {
+	color:#fff000;
+}
+
+/* END OF FORMS */
+
+
 
 /* FORUMS -----------------------------------------------------------*/
 
