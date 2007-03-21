@@ -138,17 +138,9 @@
     <div class="block-marker">Begin footer</div>
     <div id="footer-links">
       <ul class="compact">
-        <li><a href="http://www.dotlrn.org">#theme-zen.dotlrn_Home#</a> |</li>
-        <li><a href="http://www.openacs.org/projects/dotlrn">#theme-zen.dotlrn_Project_Central#</a></li>
+        <li>#dotlrn.A_dotlrn_Site#</li>
+        <li>#acs-subsite.Powered_by_OpenACS#</li>
       </ul>
-    </div>
-    <div id="footer-standards">
-      <ul class="compact">
-        <li><a href="http://validator.w3.org/check/referer" title="Check HTML">XHTML</a>,</li>
-        <li><a href="http://jigsaw.w3.org/css-validator/check/referer" title="Check CSS">CSS</a>,</li>
-        <li><a href="http://feedvalidator.org/check?url=http://dotlrn.org/zen/portal.html" title="Check RSS">RSS</a>,</li>
-        <li><a href="http://www.contentquality.com/mynewtester/cynthia.exe?Url1=http://dotlrn.org/zen/portal.html" title="Check 508">508</a></li>
-      </ul>
-    </div>
+    </div> <!-- /footer-links -->
   </div> <!-- /footer -->
 </div> <!-- /wrapper -->
