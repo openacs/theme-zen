@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="theme-zen" package_version="2.3.0d1" locale="es_ES" charset="ISO-8859-1">
+<message_catalog package_key="theme-zen" package_version="2.3.0d2" locale="es_ES" charset="ISO-8859-1">
 
   <msg key="accessibility_note">Notese que ningún software puede comprobar totalmente la accesibilidad de su sitio web.</msg>
   <msg key="Communities">Comunidades</msg>
@@ -17,4 +17,8 @@
   <msg key="Tools">Herramientas</msg>
   <msg key="website_logo">Logo del sitio web</msg>
   <msg key="You_are_here">Está en</msg>
+  <msg key="Zen_1_column">Zen Una Columna</msg>
+  <msg key="Zen_2_column">Zen Dos Columnas</msg>
+  <msg key="Zen_3_column">Zen Tres Columnas</msg>
+  <msg key="Zen_Theme">Tema Zen</msg>
 </message_catalog>
