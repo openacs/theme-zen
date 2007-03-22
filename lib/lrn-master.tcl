@@ -199,11 +199,11 @@ if { !([exists_and_not_null no_navbar_p] && $no_navbar_p) &&
 # top-level Selva colors.
 
 if { [string match /dotlrn/clubs/* [ad_conn url]] } {
-    set css_url [parameter::get_from_package_key -package_key "theme-zen" -parameter "communityCssUrl" -default "/resources/theme-zen/Selva/turquoise/Selva.css"]
+    set css_url [parameter::get_from_package_key -package_key "theme-zen" -parameter "communityCssUrl" -default "/resources/theme-zen/css/color/purple.css"]
 } elseif { [string match /dotlrn/classes/* [ad_conn url]] } {
-    set css_url [parameter::get_from_package_key -package_key "theme-zen" -parameter "courseCssUrl" -default "/resources/theme-zen/Selva/green/Selva.css"]
+    set css_url [parameter::get_from_package_key -package_key "theme-zen" -parameter "courseCssUrl" -default "/resources/theme-zen/css/color/green.css"]
 } else {
-    set css_url [parameter::get_from_package_key -package_key "theme-zen" -parameter "cssUrl" -default "/resources/theme-zen/Selva/default/Selva.css"]
+    set css_url [parameter::get_from_package_key -package_key "theme-zen" -parameter "cssUrl" -default "/resources/theme-zen/css/color/blue.css"]
 }
 
 append header_stuff [subst {
