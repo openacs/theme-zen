@@ -2,6 +2,7 @@
 <message_catalog package_key="theme-zen" package_version="2.3.0d2" locale="en_US" charset="ISO-8859-1">
 
   <msg key="accessibility_note">Note that no software can check completely the accessibility of your website.</msg>
+  <msg key="acc">ACC</msg>
   <msg key="Communities">Communities</msg>
   <msg key="ControlPanel">Control Panel</msg>
   <msg key="Courses">Classes</msg>
@@ -10,10 +11,12 @@
   <msg key="goto_admin_page">Go to Admin page</msg>
   <msg key="goto_portal_page_pretty_name">Go to %pretty_name% page</msg>
   <msg key="goto_tab_name">Go to %name%</msg>
+  <msg key="hc">HC</msg>
   <msg key="Logout">Logout</msg>
   <msg key="MySpace">My Space</msg>
   <msg key="online">online</msg>
   <msg key="Preferences">Preferences</msg>
+  <msg key="std">STD</msg>
   <msg key="Tools">Tools</msg>
   <msg key="website_logo">Website Logo</msg>
   <msg key="You_are_here">You are here</msg>

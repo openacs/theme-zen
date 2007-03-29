@@ -39,21 +39,22 @@
           </li>
         </if>
 		<li>
-          <a href="#" onclick="setActiveStyleSheet('1col'); return false;"
-             title="switch to 1col">
-            1col
+          <!-- DRB: currently std doesn't exist, this just switches to non-alt styles -->
+          <a href="#" onclick="setActiveStyleSheet('std'); return false;"
+             title="switch to standard layout">
+            #theme-zen.std#
           </a>
         </li>
         <li>
           <a href="#" onclick="setActiveStyleSheet('highContrast'); return false;"
              title="switch to High Contrast">
-            HC
+            #theme-zen.hc#
           </a>
         </li> 
         <li>
           <a href="#" onclick="setActiveStyleSheet('508'); return false;"
              title="switch to 508">
-            ACC
+            #theme-zen.acc#
           </a> |
         </li> 
         <if @untrusted_user_id@ ne 0>
