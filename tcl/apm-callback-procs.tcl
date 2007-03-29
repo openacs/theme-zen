@@ -120,7 +120,7 @@ ad_proc -public theme_zen::apm::after_install {} {
     package_exec_plsql -var_list $var_list portal_layout add_region
        
     set var_list [list \
-        [list name zen] \
+        [list name "#theme-zen.Zen-Theme#"] \
         [list description "#theme-zen.Zen_Theme#"] \
         [list filename ../../theme-zen/lib/themes/zen-theme] \
         [list resource_dir ../../theme-zen/lib/themes/zen-theme]
