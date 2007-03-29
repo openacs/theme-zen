@@ -15,7 +15,7 @@
         <maturity>0</maturity>
 
         <provides url="theme-zen" version="2.3.0d4"/>
-        <requires url="dotlrn" version="2.3.0d1"/>
+        <requires url="dotlrn" version="2.3.0d2"/>
 
         <callbacks>
             <callback type="after-install"  proc="theme_zen::apm::after_install"/>
