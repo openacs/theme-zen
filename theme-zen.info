@@ -8,13 +8,13 @@
     <singleton-p>t</singleton-p>
     <auto-mount>theme-zen</auto-mount>
 
-    <version name="2.3.0d3" url="http://openacs.org/repository/download/apm/theme-zen-2.3.0d3.apm">
+    <version name="2.3.0d4" url="http://openacs.org/repository/download/apm/theme-zen-2.3.0d4.apm">
         <owner url="http:/www.weg.ee.usyd.edu.au">Rafael Calvo</owner>
         <release-date>2005-09-28</release-date>
         <vendor url="http://www.weg.usyd.edu.au"></vendor>
         <maturity>0</maturity>
 
-        <provides url="theme-zen" version="2.3.0d3"/>
+        <provides url="theme-zen" version="2.3.0d4"/>
         <requires url="dotlrn" version="2.3.0d1"/>
 
         <callbacks>
