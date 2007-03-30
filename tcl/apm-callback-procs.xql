@@ -8,7 +8,7 @@
       insert into dotlrn_site_templates
         (site_template_id, pretty_name, site_master, portal_theme_id ) 
       values 
-        (:site_template_id, 'Zen Theme', '/packages/theme-zen/lib/lrn-master',
+        (:site_template_id, '#theme-zen.Zen_Theme#', '/packages/theme-zen/lib/lrn-master',
          :theme_id)
     </querytext>
   </fullquery>
