@@ -20,6 +20,9 @@
   <msg key="Preferences">Preferences</msg>
   <msg key="std">STD</msg>
   <msg key="Tools">Tools</msg>
+  <msg key="upgrade">Upgrade</msg>
+  <msg key="upgrade_finished">The upgrade to the Zen theme has been successfully completed.</msg>
+  <msg key="upgrade_intro">Clicking on the button below will upgrade your .LRN installation to the Zen theme</msg>
   <msg key="website_logo">Website Logo</msg>
   <msg key="You_are_here">You are here</msg>
   <msg key="Zen_1_column">Zen One Column</msg>
