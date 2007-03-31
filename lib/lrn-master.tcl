@@ -25,7 +25,7 @@ if { $untrusted_user_id != 0 } {
     set pvt_home_url [ad_pvt_home]
     set pvt_home_name [ad_pvt_home_name]
     if [empty_string_p $pvt_home_name] {
-	set pvt_home_name [_ acs-subsite.Your_Account]
+        set pvt_home_name [_ acs-subsite.Your_Account]
     }
     set logout_url [ad_get_logout_url]
 
@@ -93,8 +93,8 @@ if { $community_id ne "" } {
     set comm_type [dotlrn_community::get_community_type_from_community_id $community_id]
 
     if {[dotlrn_community::subcommunity_p -community_id $community_id]} {
-	#The colors for a subgroup are set by the parent group with a few overwritten.
-	set comm_type [dotlrn_community::get_community_type_from_community_id [dotlrn_community::get_parent_id -community_id $community_id]]
+        #The colors for a subgroup are set by the parent group with a few overwritten.
+        set comm_type [dotlrn_community::get_community_type_from_community_id [dotlrn_community::get_parent_id -community_id $community_id]]
     }
 
   
@@ -105,7 +105,7 @@ if { $community_id ne "" } {
     ]
 
     if {![empty_string_p $community_header_font]} {
-	set header_font "$community_header_font,$header_font"
+        set header_font "$community_header_font,$header_font"
     }
 
 
@@ -175,9 +175,9 @@ if { !([exists_and_not_null no_navbar_p] && $no_navbar_p) &&
      [exists_and_not_null portal_id] } {
     
     if {[exists_and_not_null community_id]} {
-	set youarehere "[dotlrn_community::get_community_name $community_id]"
+        set youarehere "[dotlrn_community::get_community_name $community_id]"
     } else {
-	set youarehere "[_ theme-zen.MySpace]"
+        set youarehere "[_ theme-zen.MySpace]"
     }
 
     set extra_spaces "<img src=\"/resources/dotlrn/spacer.gif\" alt=\"\" border=0 width=15>"    
@@ -185,8 +185,8 @@ if { !([exists_and_not_null no_navbar_p] && $no_navbar_p) &&
     set subnavbar [zen::portal_subnavbar \
         -user_id $user_id \
         -control_panel_text $control_panel_text \
-	-pre_html "$extra_spaces" \
-	-post_html $extra_spaces \
+        -pre_html "$extra_spaces" \
+        -post_html $extra_spaces \
         -link_all $link_all
     ]
 } else {
@@ -219,6 +219,18 @@ append header_stuff [subst {
 <link rel="alternate stylesheet" type="text/css" href="/resources/theme-zen/css/508.css" title="508">
 <script type="text/javascript" src="/resources/theme-zen/js/styleswitcher.js"></script>
 }]
+
+# dotlrn toolbar : We include that here, so that master template authors don't have to worry about it
+
+if { [llength [namespace eval :: info procs dotlrn_toolbar::show_p]] == 1 } {
+
+    append header_stuff {
+        <link rel="stylesheet" type="text/css" href="/resources/dotlrn/dotlrn-toolbar.css" media="all">
+    }
+    set dotlrn_toolbar_p 1
+} else {
+    set dotlrn_toolbar_p 0
+}
 
 if { [info exists text] } {
     set text [lang::util::localize $text]
