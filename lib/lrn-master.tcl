@@ -220,18 +220,6 @@ append header_stuff [subst {
 <script type="text/javascript" src="/resources/theme-zen/js/styleswitcher.js"></script>
 }]
 
-# dotlrn toolbar : We include that here, so that master template authors don't have to worry about it
-
-if { [llength [namespace eval :: info procs dotlrn_toolbar::show_p]] == 1 } {
-
-    append header_stuff {
-        <link rel="stylesheet" type="text/css" href="/resources/dotlrn/dotlrn-toolbar.css" media="all">
-    }
-    set dotlrn_toolbar_p 1
-} else {
-    set dotlrn_toolbar_p 0
-}
-
 if { [info exists text] } {
     set text [lang::util::localize $text]
 }

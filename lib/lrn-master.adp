@@ -12,10 +12,6 @@
     <else>
     </else>
 
-<if @dotlrn_toolbar_p@ true>
-  <include src="/packages/dotlrn/lib/toolbar">
-</if>
-
 <div id="wrapper">
   <div id="skiptocontent"><a href="#content-wrapper" title="skip to main content" accesskey="k">Skip to Main Content</a></div>
   <div id="header">
