@@ -2,12 +2,12 @@
 @import url(portlets.css);
 
 body {
-    margin:5px 10px 0px 10px; 
-    padding:0;
-    font:small/1.5em Tahoma, "Lucida Grande", sans-serif;
-    voice-family: "\"}\""; voice-family:inherit;
-    color: #333333;
-    	
+  margin:5px 10px 0px 10px; 
+  padding:0;
+  font:small/1.5em Tahoma, "Lucida Grande", sans-serif;
+  voice-family: "\"}\""; voice-family:inherit;
+  color: #333333;
+  	
 }
 
 #wrapper {
@@ -15,9 +15,9 @@ body {
 }
 
 #content-wrapper {
-	clear: both;
-	border-top: 1px solid #fff;
-	padding-bottom: 75px;
+  clear: both;
+  border-top: 1px solid #fff;
+  padding-bottom: 75px;
 }
 
 
@@ -25,37 +25,37 @@ body {
 /* standard html (body, h1, p, form...) */
 
 h1 { 
-	font-size: 1.2em; 
-	font-weight:bold;
-	color: #646c61; 
+  font-size: 1.2em; 
+  font-weight:bold;
+  color: #646c61; 
 }
-	
+  
 h2 { 
-	font-size: 1.1em; 
-	font-weight:bold;
-	color: #545D51; 
+  font-size: 1.1em; 
+  font-weight:bold;
+  color: #545D51; 
 }
-	
+  
 h3 {
-	font-size: 1.05em; 
-	font-weight:bold;
-	color: #444444; 
+  font-size: 1.05em; 
+  font-weight:bold;
+  color: #444444; 
 }
-	
+  
 a:link {
-	color: #235c96;
-	text-decoration:none;
+  color: #235c96;
+  text-decoration:none;
 }
-	
+  
 a:visited {
-	color: #235c96;
-	text-decoration:none;
+  color: #235c96;
+  text-decoration:none;
 }
-	
+  
 a:hover {
-	color: #235c96;
-	text-decoration:underline;
-	background: #f3f1e9;
+  color: #235c96;
+  text-decoration:underline;
+  background: #f3f1e9;
 }
 
 
@@ -68,44 +68,42 @@ a:hover {
 /* HEADER -----------------------------------------------------------*/
 
 #header {
-	
+  
 }
 
 #logo {
-float: left;
+  float: left;
 }
 
 #breadcrumbs {
-	clear: right;
-	padding-left: 100px
+  clear: right;
+  padding-left: 100px
 }
-	
+  
 #header-navigation {
-	float: right;
-	display:inline;
-  	padding-right: 0.4em;
+  float: right;
+  display:inline;
+  padding-right: 0.4em;
 }
 
 /* END OF HEADER */
-
-
 
 
 /* ALERT MESSAGE AREA -----------------------------------------------------------*/
 /* contains: styles for the alert box */
 
 #alert-message {
-	clear: both;
-    text-align: center;
-    padding: 10px;
-    padding-left: 20%;
-    padding-right: 20%;
+  clear: both;
+  text-align: center;
+  padding: 10px;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .alert {
-	display: block;
-	padding: 5px;
-	background: #ffe3e3;
+  display: block;
+  padding: 5px;
+  background: #ffe3e3;
 }
 
 /* END OF ALERT*/
@@ -115,12 +113,12 @@ float: left;
 /* LISTS -----------------------------------------------------------*/
 
 ul.compact, .action-list ul{
-	margin: 0px;
-	padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 ul.compact li, .action-list ul li {
-	list-style:none;
-	display: inline;
+  list-style:none;
+  display: inline;
 }
 
 /* END OF LISTS */
@@ -128,69 +126,69 @@ ul.compact li, .action-list ul li {
 /*  TABLES -----------------------------------------------------------*/
 
 table.standard {
-	margin: 0;
-	padding: 0;
-	border: 1px solid #E0D0B1;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #E0D0B1;
 }
 
 table.standard th {
-	padding: 12px 5px;
-	background-color: #f3f1e9;
-	font-size: .95em;
-	border-bottom: 1px solid #F0EADA;
-	
+  padding: 12px 5px;
+  background-color: #f3f1e9;
+  font-size: .95em;
+  border-bottom: 1px solid #F0EADA;
+  
 }
 
 table.standard tr td {
-	margin: 0 0 0 0;
-	padding: 12px 5px;
-	border-bottom: 1px solid #F0EADA;
+  margin: 0 0 0 0;
+  padding: 12px 5px;
+  border-bottom: 1px solid #F0EADA;
 }
 
 table.standard tfoot tr td {
-	
+  
 }
 
 table.standard th.rowHeader {
-	background-color: #f7efdc;
+  background-color: #f7efdc;
 }
 
 table.standard tr.oddRow, table.standard tr.oddRow th  {
-	background-color: #fbf8eb;
-}	
+  background-color: #fbf8eb;
+}  
 
 table.standard tr.evenRow, table.standard tr.evenRow th {
-	background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 
 
 table.form {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 table.form th, table.form legend {
-	text-align: right;
-	font-size: .95em;
-	
+  text-align: right;
+  font-size: .95em;
+  
 }
 
 table.form tr td {
-	margin: 0 0 0 0;
-	padding: 10px 5px;
+  margin: 0 0 0 0;
+  padding: 10px 5px;
 }
 
 table.form th.rowHeader {
-	background-color: #f7efdc;
+  background-color: #f7efdc;
 }
 
 table.form .oddRow {
-	background-color: #ffffff;
-}	
+  background-color: #ffffff;
+}  
 
 table.form .evenRow {
-	background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 
@@ -220,14 +218,14 @@ a.button:hover {
 }
 
 .button {
-	text-decoration: underline;
-	padding-right: 5px;
-	border-right: 1px solid #666666;
+  text-decoration: underline;
+  padding-right: 5px;
+  border-right: 1px solid #666666;
 }
 
 .admin-button-bar {
-	float: right;
-	display:none;
+  float: right;
+  display:none;
 }
 
 .admin-button-bar a.button { 
@@ -241,7 +239,7 @@ a.button:hover {
 }
 
 a img {
-	border: 0px;
+  border: 0px;
 }
 
 /* END OF BUTTONS */
@@ -249,55 +247,55 @@ a img {
 
 /* FOOTER -----------------------------------------------------------*/
 #footer {
-	clear: both;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	width: 100%;
-	text-align: center;
-	border-top: 3px double #c8c8c8;
+  clear: both;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  text-align: center;
+  border-top: 3px double #c8c8c8;
 }
 
 #footer-links {
-	text-align: right;
+  text-align: right;
 }
 
 /* END OF FOOTER*/
 
 
 .clearer, #clearer {
-	clear: both	
-}	
+  clear: both  
+}  
 
 
 /* SKIP */
  #skiptocontent a, #skiptocontent a:hover, #skiptocontent a:visited, .block-marker {
-	position:absolute;
-	left:0px;
-	top:-500px;
-	width:1px;
-	height:1px;
-	overflow:hidden;
+  position:absolute;
+  left:0px;
+  top:-500px;
+  width:1px;
+  height:1px;
+  overflow:hidden;
 }
  
 #skiptocontent a:active {
-	position:static;
-	width:auto;
-	height:auto;
+  position:static;
+  width:auto;
+  height:auto;
 }
 
 .screen-reader-only {
-	display: none;
+  display: none;
 }
 
 
 
 
 #sidebar-1-sim {
-	float: right;
-	width: 49%;
+  float: right;
+  width: 49%;
 }
 
 #main-content-sim {
-	float: left;
-	width: 50%;
+  float: left;
+  width: 50%;
 }
