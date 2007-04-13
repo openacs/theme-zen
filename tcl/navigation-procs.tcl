@@ -115,7 +115,7 @@ namespace eval zen {
                  set community_access_key #dotlrn.dotlrn_class_instance_access_key#
             }
 
-		if { [parameter::get_from_package_key -package_key "theme-zen" -parameter "SmallTitleP" -default "0"] } {
+		if { ![parameter::get_from_package_key -package_key "theme-zen" -parameter "GenericCommunityTab" -default "0"] } {
 			# show title of the community instead of community type
 			# pretty name
 			set community_message_key [dotlrn_community::get_community_name $community_id]
