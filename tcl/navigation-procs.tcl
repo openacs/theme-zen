@@ -263,8 +263,8 @@ namespace eval zen {
 	 }
 
 	if  { $community_id ne "" && $admin_p } {
-	    if {[string match "*/one-community-admin" [ad_conn url]]} {
-		append subnavbar "\n<li id=\"sub-navigatino-active\"><a href=\"${link}one-community-admin\" title=\"[_ theme-zen.goto_admin_page]\" accesskey=\"[_ theme-zen.goto_admin_page_accesskey]\">[_ theme-zen.admin]</a></li>"
+	    if {[string match "*/one-community-admin*" [ad_conn url]]} {
+		append subnavbar "\n<li id=\"sub-navigation-active\"><a href=\"${link}one-community-admin\" title=\"[_ theme-zen.goto_admin_page]\" accesskey=\"[_ theme-zen.goto_admin_page_accesskey]\">[_ theme-zen.admin]</a></li>"
 	    } else {
 		append subnavbar "\n<li><a href=\"${link}one-community-admin\" title=\"[_ theme-zen.goto_admin_page]\" accesskey=\"[_ theme-zen.goto_admin_page_accesskey]\">[_ theme-zen.admin]</a></li>"
 	    }
