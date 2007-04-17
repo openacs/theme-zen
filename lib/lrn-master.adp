@@ -13,7 +13,7 @@
     </else>
 
 <div id="wrapper">
-  <div id="skiptocontent"><a href="#content-wrapper" title="skip to main content" accesskey="k">Skip to Main Content</a></div>
+  <div id="skiptocontent"><a href="#content-wrapper" title="#theme-zen.skip_to_main_content#" accesskey="k">#theme-zen.skip_to_main_content#</a></div>
   <div id="header">
     <div id="logo">
       <img src="/resources/theme-zen/images/global/dotLRN-logo.gif" alt=".LRN" width="82" height="45" />
@@ -49,12 +49,6 @@
           <a href="#" onclick="setActiveStyleSheet('highContrast'); return false;"
              title="switch to High Contrast">
             #theme-zen.hc#
-          </a>
-        </li> 
-        <li>
-          <a href="#" onclick="setActiveStyleSheet('508'); return false;"
-             title="switch to 508">
-            #theme-zen.acc#
           </a> |
         </li> 
         <if @untrusted_user_id@ ne 0>
@@ -93,19 +87,19 @@
   </div> <!-- /header -->
 
   <div id="main-navigation">
-    <div class="block-marker">Begin main navigation</div>
+    <div class="block-marker">#theme-zen.begin_main_navigation#</div>
       <if @navbar@ not nil>@navbar;noquote@</if> 
   </div>
 
   <if @subnavbar@ not nil>
     <div id="sub-navigation">
-      <div class="block-marker">Begin sub navigation</div>
+      <div class="block-marker">#theme-zen.begin_sub_navigation#</div>
       @subnavbar;noquote@
     </div>
   </if>
 
   <div id="content-wrapper">
-    <div class="block-marker">Begin main content</div>
+    <div class="block-marker">#theme-zen.begin_main_content#</div>
     <div id="inner-wrapper">
 
       <if @user_messages:rowcount@ gt 0>
@@ -136,7 +130,7 @@
   </div> <!-- /content-wrapper -->
 
   <div id="footer">
-    <div class="block-marker">Begin footer</div>
+    <div class="block-marker">#theme-zen.begin_footer#</div>
     <div id="footer-links">
       <ul class="compact">
         <li>#dotlrn.A_dotlrn_Site#</li>

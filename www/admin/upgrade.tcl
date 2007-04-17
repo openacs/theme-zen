@@ -58,9 +58,7 @@ db_transaction {
     db_1row get_theme {}
     db_dml update_theme {}
 
-    foreach {old new} {#new-portal.simple_1column_layout_name# #theme-zen.Zen_1_column#
-                       #new-portal.simple_2column_layout_name# #theme-zen.Zen_thin_thick#
-                       #new-portal.simple_3column_layout_name# #theme-zen.Zen_thin_thick_thin#} {
+    foreach {old new} [parameter::get -package_id [ad_conn package_id] -parameter dotLRNToZenMap] {
         db_1row get_old {}
         db_1row get_new {}
         db_dml update_layouts {}
