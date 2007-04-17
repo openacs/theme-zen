@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="theme-zen" package_version="2.3.0a3" locale="es_ES" charset="ISO-8859-1">
+<message_catalog package_key="theme-zen" package_version="2.3.0b1" locale="es_ES" charset="ISO-8859-1">
 
   <msg key="acc">ACC</msg>
   <msg key="accessibility_note">Notese que ningún software puede comprobar totalmente la accesibilidad de su sitio web.</msg>
   <msg key="admin">Admin</msg>
+  <msg key="begin_footer">Inicio del Pie de Página</msg>
+  <msg key="begin_main_content">Inicio del Contenido Principal</msg>
+  <msg key="begin_main_navigation">Inicio de la Navegación Principal</msg>
+  <msg key="begin_sub_navigation">Inicio de la Subnavegación</msg>
   <msg key="Communities">Comunidades</msg>
   <msg key="ControlPanel">Panel de Control</msg>
   <msg key="Courses">Cursos</msg>
@@ -18,6 +22,7 @@
   <msg key="MySpace">Mi Espacio</msg>
   <msg key="online">conectado</msg>
   <msg key="Preferences">Preferencias</msg>
+  <msg key="skip_to_main_content">Saltar al Contenido Principal</msg>
   <msg key="std">STD</msg>
   <msg key="Tools">Herramientas</msg>
   <msg key="upgrade">Actualizar</msg>
