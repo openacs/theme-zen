@@ -8,13 +8,13 @@
     <singleton-p>t</singleton-p>
     <auto-mount>theme-zen</auto-mount>
 
-    <version name="2.3.0" url="http://openacs.org/repository/download/apm/theme-zen-2.3.0.apm">
+    <version name="2.3.1d1" url="http://openacs.org/repository/download/apm/theme-zen-2.3.1d1.apm">
         <owner url="http:/www.weg.ee.usyd.edu.au">Rafael Calvo</owner>
         <release-date>2007-04-22</release-date>
         <vendor url="http://www.weg.usyd.edu.au"></vendor>
         <maturity>0</maturity>
 
-        <provides url="theme-zen" version="2.3.0"/>
+        <provides url="theme-zen" version="2.3.1d1"/>
         <requires url="dotlrn" version="2.3.0"/>
 
         <callbacks>
@@ -28,6 +28,7 @@
             <parameter datatype="string"  min_n_values="1"  max_n_values="1"  name="CssUrl"  default="/resources/theme-zen/css/color/blue.css" description="default css_url"/>
             <parameter datatype="string"  min_n_values="1"  max_n_values="1" name="dotLRNToZenMap"  default="#new-portal.simple_1column_layout_name# #theme-zen.Zen_1_column# #new-portal.simple_2column_layout_name# #theme-zen.Zen_2_column# #new-portal.simple_3column_layout_name# #theme-zen.Zen_3_column#" description="list of old layout/new layout names used to update and existing .LRN site"/>
             <parameter datatype="string"  min_n_values="1"  max_n_values="1"  name="GenericCommunityTab"  default="0" description="Use a generic name for the community tab"/>
+            <parameter datatype="string"  min_n_values="1"  max_n_values="1"  name="logoImageAttributes" default="src /resources/theme-zen/images/global/dotLRN-logo.gif alt .LRN width 82 height 45" description="List of name value pairs for HTML attributes for the image tag of the logo"/>
         </parameters>
 
     </version>
