@@ -10,7 +10,7 @@ ad_page_contract {
 }
 
 ad_form -name "your_zen_level" -method post -html {enctype multipart/form-data class margin-form} -fieldset {{title "T1" class "C1"} \
-														 "<b>Form using margin-form class</b>"} \
+														 "<em>Form using margin-form class</em>"} \
     -form {
     {zen_id:key}
     {zen_attachment:text(file),optional\
