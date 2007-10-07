@@ -18,6 +18,14 @@ if { [string equal [ad_conn url] "/"] } {
     set system_url ""
 }
 
+# Logo
+array set attributes [parameter::get_from_package_key -package_key "theme-zen" -parameter logoImageAttributes]
+set img_attrib ""
+foreach name [array names attributes] {
+    append img_attrib " $name=\"$attributes($name)\""
+}
+
+
 # Get user information
 set sw_admin_p [acs_user::site_wide_admin_p -user_id $untrusted_user_id]
 if { $untrusted_user_id != 0 } {

@@ -16,7 +16,9 @@
   <div id="skiptocontent"><a href="#content-wrapper" title="#theme-zen.skip_to_main_content#" accesskey="k">#theme-zen.skip_to_main_content#</a></div>
   <div id="header">
     <div id="logo">
-      <img src="/resources/theme-zen/images/global/dotLRN-logo.gif" alt=".LRN" width="82" height="45" />
+      <if @img_attrib@ not nil>
+        <img @img_attrib;noquote@>
+      </if>
     </div>
     <div id="header-navigation">
       <ul class="compact">

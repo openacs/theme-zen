@@ -41,6 +41,16 @@ db_transaction {
         -parameter DefaultMaster_p \
         -value "/packages/theme-zen/lib/lrn-master"
 
+    parameter::set_default \
+        -package_key dotlrn \
+        -parameter non_member_layout_name \
+        -value "#theme-zen.Zen_2_column#"
+
+    parameter::set_default \
+        -package_key dotlrn \
+        -parameter admin_layout_name \
+        -value "#theme-zen.Zen_2_column#"
+
     # Poached from dotlrn's package instantiate callback.
 
     set site_template_id [db_string select_st_id {}]
