@@ -149,20 +149,6 @@ if { $community_id ne "" } {
     set text ""
 }
 
-# Header_stuff to be removed once new-portal fixed (i.e. uses template::head)
-if { ![info exists header_stuff] } {
-    set header_stuff ""
-}
-
-if {[exists_and_not_null portal_page_p]} {
-    if { [set page_num [ns_queryget page_num]] eq "" } {
-        set page_num 0
-    }
-    append header_stuff [portal::get_page_header_stuff \
-                            -portal_id $portal_id \
-                            -page_num $page_num]
-}
-
 # Set up some basic stuff
 if { [ad_conn untrusted_user_id] == 0 } {
     set user_name {}
