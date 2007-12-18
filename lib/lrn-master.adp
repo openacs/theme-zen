@@ -1,16 +1,11 @@
-<master src="/www/blank-compat">
+<master src="/www/blank-master">
   <property name="header_stuff">
     @header_stuff;noquote@
-    @dotlrn_master__header_stuff;noquote@
   </property>
   <if @context@ not nil><property name="context">@context;noquote@</property></if>
     <else><if @context_bar@ not nil><property name="context_bar">@context_bar;noquote@</property></if></else>
   <if @focus@ not nil><property name="focus">@focus;noquote@</property></if>
   <if @doc_type@ not nil><property name="doc_type">@doc_type;noquote@</property></if>
-     <if @untrusted_user_id@ ne 0>
-    </if>
-    <else>
-    </else>
 
 <div id="wrapper">
   <div id="skiptocontent"><a href="#content-wrapper" title="#theme-zen.skip_to_main_content#" accesskey="k">#theme-zen.skip_to_main_content#</a></div>

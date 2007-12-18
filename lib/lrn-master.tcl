@@ -64,10 +64,6 @@ if {[dotlrn::user_p -user_id $user_id]} {
     set portal_id [dotlrn::get_portal_id -user_id $user_id]
 }
 
-if { ![info exists header_stuff] } {
-    set header_stuff ""
-}
-
 if {![info exists link_all]} {
     set link_all 0
 }
@@ -153,6 +149,11 @@ if { $community_id ne "" } {
     set text ""
 }
 
+# Header_stuff to be removed once new-portal fixed (i.e. uses template::head)
+if { ![info exists header_stuff] } {
+    set header_stuff ""
+}
+
 if {[exists_and_not_null portal_page_p]} {
     if { [set page_num [ns_queryget page_num]] eq "" } {
         set page_num 0
@@ -214,50 +215,28 @@ if { [string match /dotlrn/clubs/* [ad_conn url]] } {
     set css_url [parameter::get_from_package_key -package_key "theme-zen" -parameter "cssUrl" -default "/resources/theme-zen/css/color/blue.css"]
 }
 
-append header_stuff [subst {
-<meta http-equiv="content-type" content="text/html; charset=[ad_conn charset]">
-<meta name="robots" content="all">
-<meta name="keywords" content="accessibility, portals, elearning, design">
-<link rel="stylesheet" type="text/css" href="/resources/acs-subsite/default-master.css" media="screen">
-<link rel="stylesheet" type="text/css" href="/resources/theme-zen/css/main.css" media="screen">
-<link rel="stylesheet" type="text/css" href="/resources/theme-zen/css/print.css" media="print">
-<link rel="stylesheet" type="text/css" href="/resources/theme-zen/css/handheld.css" media="handheld">
-<link rel="stylesheet" type="text/css" href="$css_url" media="all">
-<link rel="alternate stylesheet" type="text/css" href="/resources/theme-zen/css/highContrast.css" title="highContrast">
-<link rel="alternate stylesheet" type="text/css" href="/resources/theme-zen/css/508.css" title="508">
-<script type="text/javascript" src="/resources/theme-zen/js/styleswitcher.js"></script>
-}]
+template::head::add_meta -name "robots" -content "all"
+template::head::add_meta -name "keywords" -content "accessibility, portals, elearning, design"
+
+template::head::add_css -href "/resources/acs-templating/lists.css"
+template::head::add_css -href "/resources/acs-templating/forms.css"
+ 
+template::head::add_css -href "/resources/acs-subsite/default-master.css" -media "screen"
+template::head::add_css -href "/resources/theme-zen/css/main.css" -media "screen"
+template::head::add_css -href "/resources/theme-zen/css/print.css" -media "print"
+template::head::add_css -href "/resources/theme-zen/css/handheld.css" -media "handheld"
+template::head::add_css -href $css_url
+
+template::head::add_css -alternate -href "/resources/theme-zen/css/highContrast.css" -title "highContrast"
+template::head::add_css -alternate -href "/resources/theme-zen/css/508.css" -title "508"
+
+template::head::add_javascript -src "/resources/theme-zen/js/styleswitcher.js"
+template::head::add_javascript -src "/resources/acs-subsite/core.js"
 
 if { [info exists text] } {
     set text [lang::util::localize $text]
 }
 
-
-# Focus
-multirow create attribute key value
-
-if { ![template::util::is_nil focus] } {
-    # Handle elements wohse name contains a dot
-    if { [regexp {^([^.]*)\.(.*)$} $focus match form_name element_name] } {
-
-        # Add safety code to test that the element exists '
-        append header_stuff "
-          <script language=\"JavaScript\" type=\"text/javascript\">
-            function acs_focus( form_name, element_name ){
-                if (document.forms == null) return;
-                if (document.forms\[form_name\] == null) return;
-                if (document.forms\[form_name\].elements\[element_name\] == null) return;
-                if (document.forms\[form_name\].elements\[element_name\].type == 'hidden') return;
-
-                document.forms\[form_name\].elements\[element_name\].focus();
-            }
-          </script>
-        "
-        
-        template::multirow append \
-                attribute onload "javascript:acs_focus('${form_name}', '${element_name}')"
-    }
-}
 
 # Developer-support support
 set ds_enabled_p [parameter::get_from_package_key \
@@ -294,9 +273,3 @@ set lang_admin_p [permission::permission_p \
                       -party_id [ad_conn untrusted_user_id]]
 set toggle_translator_mode_url [export_vars -base "${acs_lang_url}admin/translator-mode-toggle" { { return_url [ad_return_url] } }]
 
-# Bring in header stuff from portlets, e.g. dhtml tree javascript
-# from dotlrn-main-portlet.
-global dotlrn_master__header_stuff
-if { ![info exists dotlrn_master__header_stuff] } {
-    set dotlrn_master__header_stuff ""
-}
