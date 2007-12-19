@@ -259,3 +259,15 @@ set lang_admin_p [permission::permission_p \
                       -party_id [ad_conn untrusted_user_id]]
 set toggle_translator_mode_url [export_vars -base "${acs_lang_url}admin/translator-mode-toggle" { { return_url [ad_return_url] } }]
 
+#
+# Determine if we should be displaying the dotLRN toolbar
+#
+set dotlrn_toolbar_p [expr {
+    [llength [namespace eval :: info procs dotlrn_toolbar::show_p]] == 1
+}]
+
+if {$dotlrn_toolbar_p} {
+    template::head::add_css -href "/resources/dotlrn/dotlrn-toolbar.css"
+    template::add_header -src "/packages/dotlrn/lib/toolbar"
+}
+ 
