@@ -156,8 +156,9 @@ if { [ad_conn untrusted_user_id] == 0 } {
     set user_name [acs_user::get_element -user_id [ad_conn untrusted_user_id] -element name]
 }
 
-if {![exists_and_not_null title]} {
-    set title [ad_system_name]
+# Set page title
+if { ![info exists doc(title)] && [exists_and_not_null title] } {
+    set doc(title) $title
 }
 
 if {[empty_string_p [dotlrn_community::get_parent_community_id -package_id [ad_conn package_id]]]} {
@@ -204,9 +205,6 @@ if { [string match /dotlrn/clubs/* [ad_conn url]] } {
 template::head::add_meta -name "robots" -content "all"
 template::head::add_meta -name "keywords" -content "accessibility, portals, elearning, design"
 
-template::head::add_css -href "/resources/acs-templating/lists.css"
-template::head::add_css -href "/resources/acs-templating/forms.css"
- 
 template::head::add_css -href "/resources/acs-subsite/default-master.css" -media "screen"
 template::head::add_css -href "/resources/theme-zen/css/main.css" -media "screen"
 template::head::add_css -href "/resources/theme-zen/css/print.css" -media "print"
@@ -217,7 +215,6 @@ template::head::add_css -alternate -href "/resources/theme-zen/css/highContrast.
 template::head::add_css -alternate -href "/resources/theme-zen/css/508.css" -title "508"
 
 template::head::add_javascript -src "/resources/theme-zen/js/styleswitcher.js"
-template::head::add_javascript -src "/resources/acs-subsite/core.js"
 
 if { [info exists text] } {
     set text [lang::util::localize $text]
@@ -270,4 +267,3 @@ if {$dotlrn_toolbar_p} {
     template::head::add_css -href "/resources/dotlrn/dotlrn-toolbar.css"
     template::add_header -src "/packages/dotlrn/lib/toolbar"
 }
- 
