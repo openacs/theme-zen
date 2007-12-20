@@ -43,6 +43,10 @@ if {![exists_and_not_null return_url]} {
     set return_url ""
 }
 
+if { [exists_and_not_null resource_dir] } {
+    portal::set_page_css $resource_dir
+}
+
 portal::layout_elements $element_list
 
 set element_2_first_num [llength $element_ids_1] 
