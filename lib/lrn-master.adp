@@ -98,11 +98,9 @@
 
       <if @user_messages:rowcount@ gt 0>
         <div id="alert-message">
-          <ul>
-            <multiple name="user_messages">
-              <div class="alert"><strong>@user_messages.message;noquote@</strong></div>
-            </multiple>
-          </ul>
+          <multiple name="user_messages">
+            <div class="alert"><strong>@user_messages.message;noquote@</strong></div>
+          </multiple>
         </div>
       </if>
 
