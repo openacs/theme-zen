@@ -205,11 +205,11 @@ if { [string match /dotlrn/clubs/* [ad_conn url]] } {
 template::head::add_meta -name "robots" -content "all"
 template::head::add_meta -name "keywords" -content "accessibility, portals, elearning, design"
 
-template::head::add_css -href "/resources/acs-subsite/default-master.css" -media "screen"
-template::head::add_css -href "/resources/theme-zen/css/main.css" -media "screen"
-template::head::add_css -href "/resources/theme-zen/css/print.css" -media "print"
-template::head::add_css -href "/resources/theme-zen/css/handheld.css" -media "handheld"
-template::head::add_css -href $css_url
+template::head::add_css -href "/resources/acs-subsite/default-master.css" -media "screen" -order 1
+template::head::add_css -href "/resources/theme-zen/css/main.css" -media "screen" -order 2
+template::head::add_css -href "/resources/theme-zen/css/print.css" -media "print" -order 3
+template::head::add_css -href "/resources/theme-zen/css/handheld.css" -media "handheld" -order 4
+template::head::add_css -href $css_url -order 5
 
 template::head::add_css -alternate -href "/resources/theme-zen/css/highContrast.css" -title "highContrast"
 template::head::add_css -alternate -href "/resources/theme-zen/css/508.css" -title "508"
