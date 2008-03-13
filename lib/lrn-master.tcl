@@ -247,7 +247,14 @@ if { [info exists context] } {
 } else {
     set context_tmp {}
 }
-ad_context_bar_multirow -- $context_tmp
+
+# Build breadcrumbs only from dotlrn root node 
+# then replace the first element to be dotLRN always
+ad_context_bar_multirow -from_node [dotlrn::get_node_id] -- $context_tmp
+if { [template::multirow get context 1 url] ne "" } {
+    template::multirow set context 1 url [dotlrn::get_url]
+}
+template::multirow set context 1 label "#dotlrn.Home#"
 
 set acs_lang_url [apm_package_url_from_key "acs-lang"]
 set lang_admin_p [permission::permission_p \
