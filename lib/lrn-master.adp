@@ -123,6 +123,9 @@
 
   <div id="footer">
     <div class="block-marker">#theme-zen.begin_footer#</div>
+    <div id="footer-icons">
+      <img src="http://www.w3.org/Icons/valid-html401-blue" alt="Valid HTML 4.01 Strict" height="31" width="88">
+    </div>
     <div id="footer-links">
       <ul class="compact">
         <li>#dotlrn.A_dotlrn_Site#</li>
