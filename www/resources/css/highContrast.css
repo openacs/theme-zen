@@ -233,7 +233,7 @@ tr.last td {
 /* END OF LISTS */
 
 /* FORMS */
-.form-required-mark {
+.form-required-mark, .form-error {
 	color:#fff000;
 }
 
