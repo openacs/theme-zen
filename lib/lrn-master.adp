@@ -4,8 +4,13 @@
   <if @focus@ not nil><property name="focus">@focus;noquote@</property></if>
   <if @doc@ defined><property name="&doc">doc</property></if>
 
+<div id="skiptocontent">
+  <p>
+    <a href="#content-wrapper" title="#theme-zen.skip_to_main_content#" accesskey="2">#theme-zen.skip_to_main_content#</a> | <a href="/theme-zen/accessibility" title="#theme-zen.Accessibility_page#" accesskey="0">#theme-zen.Accessibility#</a>
+  </p>
+</div>
+
 <div id="wrapper">
-  <div id="skiptocontent"><a href="#content-wrapper" title="#theme-zen.skip_to_main_content#" accesskey="k">#theme-zen.skip_to_main_content#</a></div>
   <div id="header">
     <div id="logo">
       <if @img_attrib@ not nil>
@@ -17,37 +22,23 @@
         <if @untrusted_user_id@ ne 0>
           <li>
             <!-- user greeting or login message -->
-            #acs-subsite.Welcome_user# |
+            #acs-subsite.Welcome_user#
           </li>
           <li>
             <a href="@whos_online_url@" title="#acs-subsite.Whos_Online_link_label#">
-              @num_users_online@
+              | @num_users_online@
               <if @num_users_online@ eq 1>
                 #acs-subsite.Member#
               </if>
               <else>
                 #acs-subsite.Members#
               </else>
-              #theme-zen.online# |
+              #theme-zen.online#
             </a>
           </li>
-        </if>
-		<li>
-          <!-- DRB: currently std doesn't exist, this just switches to non-alt styles -->
-          <a href="#" onclick="setActiveStyleSheet('std'); return false;"
-             title="switch to standard layout">
-            #theme-zen.std#
-          </a>
-        </li>
-        <li>
-          <a href="#" onclick="setActiveStyleSheet('highContrast'); return false;"
-             title="switch to High Contrast">
-            #theme-zen.hc#
-          </a> |
-        </li> 
-        <if @untrusted_user_id@ ne 0>
           <li>
-            <a href="@logout_url@" title="#acs-subsite.Logout_from_system#" accesskey="L">
+            | 
+            <a href="@logout_url@" title="#acs-subsite.Logout_from_system#">
               #acs-subsite.Logout# 
             </a>
           </li>
@@ -63,6 +54,7 @@
     </div>
 
     <div id="breadcrumbs">
+      <span class="screen-reader-only">#theme-zen.You_are_here#</span>
       <ul class="compact">
         <if @context:rowcount@ not nil>
           <multiple name="context">

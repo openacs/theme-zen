@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="theme-zen" package_version="2.3.0b1" locale="en_US" charset="ISO-8859-1">
+<message_catalog package_key="theme-zen" locale="en_US" charset="ISO-8859-1">
 
   <msg key="acc">ACC</msg>
+  <msg key="Access_key">Access Key</msg>
+  <msg key="Access_keys">Access Keys</msg>
+  <msg key="Access_keys_can_be_used_">Access keys can be used to move quickly through the main sections of the site. If you are using Windows, press the &quot;Alt&quot; key and the corresponding access key. Mac users have to press the &quot;ctrl&quot; key instead of the &quot;Alt&quot; one. Depending on the browser you're using, you might have to press also &quot;Enter&quot; afterwards.</msg>
+  <msg key="Accessibility">Accessibility</msg>
   <msg key="accessibility_note">Note that no software can check completely the accessibility of your website.</msg>
+  <msg key="Accessibility_page">Accessibility Page</msg>
   <msg key="admin">Class Admin</msg>
+  <msg key="Associated_page">Associated Page</msg>
   <msg key="begin_footer">Begin Footer</msg>
   <msg key="begin_main_content">Begin Main Content</msg>
   <msg key="begin_main_navigation">Begin Main Navigation</msg>
   <msg key="begin_sub_navigation">Begin Sub Navigation</msg>
+  <msg key="Change_Contrast">Change Contrast</msg>
   <msg key="Communities">Communities</msg>
   <msg key="ControlPanel">Control Panel</msg>
   <msg key="Courses">Classes</msg>
+  <msg key="Default_Colors">Default colors</msg>
   <msg key="dotlrn_Home">.LRN Home</msg>
   <msg key="dotlrn_Project_Central">.LRN Project Central</msg>
   <msg key="goto_admin_page">Go to Admin page</msg>
@@ -18,12 +26,16 @@
   <msg key="goto_portal_page_pretty_name">Go to %pretty_name% page</msg>
   <msg key="goto_tab_name">Go to %name%</msg>
   <msg key="hc">HC</msg>
+  <msg key="High_Contrast">High contrast</msg>
   <msg key="Logout">Logout</msg>
   <msg key="MySpace">My Space</msg>
   <msg key="online">online</msg>
   <msg key="Preferences">Preferences</msg>
   <msg key="skip_to_main_content">Skip To Main Content</msg>
   <msg key="std">STD</msg>
+  <msg key="switch_to_default_colors">Switch to default colors</msg>
+  <msg key="switch_to_high_contrast">Switch to high contrast</msg>
+  <msg key="The_following_styles_are_">The following styles are available:</msg>
   <msg key="Tools">Tools</msg>
   <msg key="upgrade">Upgrade</msg>
   <msg key="upgrade_finished">The upgrade to the Zen theme has been successfully completed.</msg>

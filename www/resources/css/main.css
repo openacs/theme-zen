@@ -272,7 +272,30 @@ a img {
 
 
 /* SKIP */
- #skiptocontent a, #skiptocontent a:hover, #skiptocontent a:visited, .block-marker {
+#skiptocontent p, #skiptocontent a, #skiptocontent a:hover, #skiptocontent a:visited {
+	position:relative;
+	left:0px;
+	top:0px;
+	overflow:hidden;
+    background-color: #eeeeee;
+    color: #000000;
+}
+
+#skiptocontent p {
+  display: block;
+  margin-top: -3px;
+  margin-bottom: 3px;
+  margin-left: -10px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #999999;
+  text-align: left;
+  width:100%;
+  height: 1.5em;
+  padding-left: 1em;
+}
+
+.block-marker {
   position:absolute;
   left:0px;
   top:-500px;

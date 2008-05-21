@@ -103,7 +103,7 @@ namespace eval zen {
         }
 
         if { $dotlrn_admin_p } {
-            lappend tabs_list [list $dotlrn_admin_url #dotlrn.Administration# #dotlrn.Administration_Accesskey#]
+            lappend tabs_list [list $dotlrn_admin_url #dotlrn.Administration# 9]
             if { [string first $dotlrn_admin_url $current_url] != -1 } {
                 set which_tab_selected $which_tab
             }
