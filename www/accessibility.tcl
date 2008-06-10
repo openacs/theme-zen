@@ -25,7 +25,7 @@ if { $dotlrn_admin_p } {
 # Now add the ones for the tabs (home should be 1)
 foreach {url name key} [parameter::get_from_package_key -package_key "theme-zen" -parameter "AdditionalNavbarTabs" -default ""] {
 
-    template::multirow append accesskeys $name $url $key
+    template::multirow append accesskeys $name $url [lang::util::localize $key]
 
 }
 
