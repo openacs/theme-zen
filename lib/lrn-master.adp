@@ -60,7 +60,7 @@
           <multiple name="context">
             <li>
               <if @context.url@ not nil>
-                <a href="@context.url@">@context.label@</a> :
+                <a href="@context.url@">@context.label@</a> @separator@
               </if>
               <else>
                 @context.label@

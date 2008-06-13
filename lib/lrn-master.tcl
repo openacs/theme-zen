@@ -241,6 +241,7 @@ set change_locale_url "/acs-lang/?[export_vars { { package_id "[ad_conn package_
 set in_dotlrn_p [expr [string match "[dotlrn::get_url]/*" [ad_conn url]]]
 
 # Context bar
+set separator [parameter::get -package_id [ad_conn subsite_id] -parameter ContextBarSeparator -default ":"]
 if { [info exists context] } {
     set context_tmp $context
     unset context
