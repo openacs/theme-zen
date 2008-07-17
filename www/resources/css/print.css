@@ -21,7 +21,7 @@ h3 {
 	color: #000000; 
 }
 
-#header-navigation, #main-navigation, #sub-navigation, #skiptocontent, .block-marker, #alert-message, .portlet-controls, #footer, .button {
+#header-navigation, #main-navigation, #sub-navigation, #skiptocontent, .block-marker, #alert-message, .portlet-controls, #footer, .button, .screen-reader-only {
 	display: none;
 }
 
