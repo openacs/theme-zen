@@ -77,7 +77,7 @@ a:hover {
 	background: #ffffff url(/resources/theme-zen/images/global/trans.gif) repeat-x top left;/* color */
 }
 
-.portlet-title h1 {
+.portlet-title h1, .portlet-title-no-controls h1 {
 	color: #222222;
 }
 
