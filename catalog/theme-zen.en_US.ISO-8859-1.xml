@@ -32,6 +32,14 @@
   <msg key="online">online</msg>
   <msg key="Preferences">Preferences</msg>
   <msg key="skip_to_main_content">Skip To Main Content</msg>
+  <msg key="Standards_Compliance">Standards Compliance</msg>
+  <msg key="Standards_compliance_text">All user pages comply with the
+  &lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt; Strict 4.01 specification
+  and use structured semantic markup. &lt;abbr title=&quot;Cascading Style Sheets&quot;&gt;CSS&lt;/abbr&gt;
+  are used to format and layout the content. User pages are
+  &lt;abbr title=&quot;Web Content Accessibility Guidelines&quot;&gt;WCAG&lt;/abbr&gt; 1.0
+  level AA and &lt;abbr title=&quot;United States&quot;&gt;U.S.&lt;/abbr&gt; Federal Government Section 508
+  compliant.</msg>
   <msg key="std">STD</msg>
   <msg key="switch_to_default_colors">Switch to default colors</msg>
   <msg key="switch_to_high_contrast">Switch to high contrast</msg>

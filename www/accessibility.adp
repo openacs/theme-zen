@@ -4,6 +4,9 @@
 
 <h1>#theme-zen.Accessibility#</h1>
 
+<h2>#theme-zen.Standards_Compliance#</h2>
+<p>#theme-zen.Standards_compliance_text#</p>
+
 <h2>#theme-zen.Change_Contrast#</h2>
 
 <p>#theme-zen.The_following_styles_are_#</p>
@@ -27,4 +30,5 @@
 <p>#theme-zen.Access_keys_can_be_used_#</p>
 
 <listtemplate name="zen_keys"></listtemplate>
+
 
