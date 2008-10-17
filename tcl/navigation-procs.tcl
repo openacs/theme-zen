@@ -62,7 +62,7 @@ namespace eval zen {
                                    -object_id [dotlrn::get_package_id] \
                                    -privilege admin]
             if { $dotlrn_admin_p } {
-                set dotlrn_admin_url "${dotlrn_url}/admin/"
+                set dotlrn_admin_url [dotlrn::get_admin_url]
             }
             
             if { $sw_admin_p } {
@@ -272,9 +272,9 @@ namespace eval zen {
 
         if  { $community_id ne "" && $admin_p } {
             if {[string match "*/one-community-admin*" [ad_conn url]]} {
-                append subnavbar "\n<li id=\"sub-navigation-active\"><a href=\"${link}one-community-admin\" title=\"[_ theme-zen.goto_admin_page]\" accesskey=\"[_ theme-zen.goto_admin_page_accesskey]\">[_ theme-zen.admin]</a></li>"
+                append subnavbar "\n<li id=\"sub-navigation-active\"><a href=\"${link}one-community-admin\" title=\"[_ theme-zen.goto_admin_page]\" accesskey=\"[_ theme-zen.goto_admin_page_accesskey]\">[_ dotlrn.Admin]</a></li>"
             } else {
-                append subnavbar "\n<li><a href=\"${link}one-community-admin\" title=\"[_ theme-zen.goto_admin_page]\" accesskey=\"[_ theme-zen.goto_admin_page_accesskey]\">[_ theme-zen.admin]</a></li>"
+                append subnavbar "\n<li><a href=\"${link}one-community-admin\" title=\"[_ theme-zen.goto_admin_page]\" accesskey=\"[_ theme-zen.goto_admin_page_accesskey]\">[_ dotlrn.Admin]</a></li>"
             }
         }
 

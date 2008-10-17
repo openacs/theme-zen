@@ -5,6 +5,8 @@ set untrusted_user_id [ad_conn untrusted_user_id]
 set community_id [dotlrn_community::get_community_id]
 set dotlrn_url [dotlrn::get_url]
 
+set sitemap_url "$dotlrn_url/site-map"
+
 #----------------------------------------------------------------------
 # Display user messages
 #----------------------------------------------------------------------

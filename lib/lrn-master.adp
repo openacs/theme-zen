@@ -7,6 +7,9 @@
 <div id="skiptocontent">
   <p>
     <a href="#content-wrapper" title="#theme-zen.skip_to_main_content#" accesskey="2">#theme-zen.skip_to_main_content#</a> | <a href="/theme-zen/accessibility" title="#theme-zen.Accessibility_page#" accesskey="0">#theme-zen.Accessibility#</a>
+        <if @user_id@ ne 0>
+          | <a href="@sitemap_url@" title="#dotlrn.Site_Map_Title#" accesskey="4">#dotlrn.Site_Map#</a>
+        </if>
   </p>
 </div>
 

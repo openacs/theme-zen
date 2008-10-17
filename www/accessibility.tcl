@@ -12,6 +12,7 @@ template::multirow create accesskeys name url key
 # Add fixed accesskeys
 template::multirow append accesskeys [_ theme-zen.Accessibility_page] "/theme-zen/accessibility" 0
 template::multirow append accesskeys [_ theme-zen.skip_to_main_content] "#content-wrapper" 2
+template::multirow append accesskeys [_ dotlrn.Site_Map] "[dotlrn::get_url]/site-map" 4
 
 set dotlrn_admin_p [permission::permission_p \
                         -party_id [ad_conn user_id] \
