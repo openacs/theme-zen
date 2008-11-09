@@ -11,7 +11,7 @@ are located in the css for that package (eg. Selva_calendar.css)  */
 .portlet-header {
 	padding: 3px 5px 3px 5px;
 	border-top: 1px solid #fff;
-	background: #4b68a0 url(/resources/theme-zen/images/portlets/header-bg.gif) repeat-x top left;
+	background: #334f82 url(/resources/theme-zen/images/portlets/header-bg.gif) repeat-x top left;
 }
 
 .portlet-title {

@@ -5,6 +5,8 @@ set untrusted_user_id [ad_conn untrusted_user_id]
 set community_id [dotlrn_community::get_community_id]
 set dotlrn_url [dotlrn::get_url]
 
+set sitemap_url "$dotlrn_url/site-map"
+
 #----------------------------------------------------------------------
 # Display user messages
 #----------------------------------------------------------------------
@@ -209,7 +211,7 @@ template::head::add_css -href "/resources/acs-subsite/default-master.css" -media
 template::head::add_css -href "/resources/theme-zen/css/main.css" -media "screen" -order 2
 template::head::add_css -href "/resources/theme-zen/css/print.css" -media "print" -order 3
 template::head::add_css -href "/resources/theme-zen/css/handheld.css" -media "handheld" -order 4
-template::head::add_css -href $css_url -order 5
+template::head::add_css -href $css_url -media "screen" -order 5
 
 template::head::add_css -alternate -href "/resources/theme-zen/css/highContrast.css" -title "highContrast"
 template::head::add_css -alternate -href "/resources/theme-zen/css/508.css" -title "508"
@@ -241,6 +243,7 @@ set change_locale_url "/acs-lang/?[export_vars { { package_id "[ad_conn package_
 set in_dotlrn_p [expr [string match "[dotlrn::get_url]/*" [ad_conn url]]]
 
 # Context bar
+set separator [parameter::get -package_id [ad_conn subsite_id] -parameter ContextBarSeparator -default ":"]
 if { [info exists context] } {
     set context_tmp $context
     unset context
