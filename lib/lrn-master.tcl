@@ -111,7 +111,7 @@ if { $community_id ne "" } {
     ]
 
     if {![empty_string_p $community_header_font]} {
-        set header_font "$community_header_font,$header_font"
+        set header_font $community_header_font
     }
 
 
