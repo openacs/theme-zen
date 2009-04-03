@@ -87,9 +87,13 @@ if { ![string equal [ad_conn package_key] [dotlrn::package_key]] } {
 set control_panel_text [_ acs-subsite.Admin]
 if { $community_id ne "" } {
 
+    # Is it a subgroup?
+    set parent_community_id [dotlrn_community::get_parent_id -community_id $community_id]
+
     set portal_id [dotlrn_community::get_portal_id -community_id $community_id]
     set link [dotlrn_community::get_community_url $community_id]
     set admin_p [dotlrn::user_can_admin_community_p -user_id $user_id -community_id $community_id]
+    set community_url [dotlrn_community::get_community_url $community_id]
 
     if {[empty_string_p $portal_id] && !$admin_p } {
         # not a member yet
@@ -104,37 +108,32 @@ if { $community_id ne "" } {
     }
 
   
-   # font hack
-   set community_header_font [dotlrn_community::get_attribute \
-        -community_id $community_id \
-        -attribute_name header_font
-    ]
+    ### Logo hack
+    set comm_id_for_logo $community_id
 
-    if {![empty_string_p $community_header_font]} {
-        set header_font $community_header_font
+    # Try to get community logo first
+    set header_logo_item_id [dotlrn_community::get_attribute \
+        -community_id $comm_id_for_logo \
+        -attribute_name header_logo_item_id]
+
+    if { $header_logo_item_id eq "" && $parent_community_id ne "" } {
+        set comm_id_for_logo $parent_community_id
+        # try with parent community logo
+        set header_logo_item_id [dotlrn_community::get_attribute \
+                                     -community_id $comm_id_for_logo \
+                                     -attribute_name header_logo_item_id]
+
     }
 
+    if { $header_logo_item_id ne "" } {
+        set item_id [content::revision::item_id -revision_id $header_logo_item_id]
+        set header_logo_url "[subsite::get_url]image/$item_id"
 
-    set header_font_size [dotlrn_community::get_attribute \
-        -community_id $community_id \
-        -attribute_name header_font_size
-    ]
-
-    set header_font_color [dotlrn_community::get_attribute \
-        -community_id $community_id \
-        -attribute_name header_font_color
-    ]
-
-    # logo hack 
-    set header_logo_item_id [dotlrn_community::get_attribute \
-        -community_id $community_id \
-        -attribute_name header_logo_item_id
-    ]
-
-    set text [dotlrn::user_context_bar -community_id $community_id]
-
-    if { [string equal [ad_conn package_key] [dotlrn::package_key]] } {
-        set text "<span class=\"header-text\">$text</span>"
+        set header_logo_alt_text [dotlrn_community::get_attribute \
+                                      -community_id $comm_id_for_logo \
+                                      -attribute_name header_logo_alt_text]
+        
+        set img_attrib [subst {src="$header_logo_url" alt="$header_logo_alt_text"}]
     }
 
 } elseif {[parameter::get -parameter community_type_level_p] == 1} {
@@ -161,12 +160,6 @@ if { [ad_conn untrusted_user_id] == 0 } {
 # Set page title
 if { ![info exists doc(title)] && [exists_and_not_null title] } {
     set doc(title) $title
-}
-
-if {[empty_string_p [dotlrn_community::get_parent_community_id -package_id [ad_conn package_id]]]} {
-    set parent_comm_p 0
-} else {
-    set parent_comm_p 1
 }
 
 if { !([exists_and_not_null no_navbar_p] && $no_navbar_p) &&
@@ -244,6 +237,7 @@ set in_dotlrn_p [expr [string match "[dotlrn::get_url]/*" [ad_conn url]]]
 
 # Context bar
 set separator [parameter::get -package_id [ad_conn subsite_id] -parameter ContextBarSeparator -default ":"]
+
 if { [info exists context] } {
     set context_tmp $context
     unset context
