@@ -15,6 +15,7 @@ template::multirow append accesskeys [_ theme-zen.skip_to_main_content] "#conten
 template::multirow append accesskeys [_ dotlrn.Site_Map] "[dotlrn::get_url]/site-map" 4
 
 set dotlrn_admin_p [permission::permission_p \
+                        -no_login \
                         -party_id [ad_conn user_id] \
                         -object_id [dotlrn::get_package_id] \
                         -privilege admin]
