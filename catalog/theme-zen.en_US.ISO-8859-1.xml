@@ -28,6 +28,8 @@
   <msg key="hc">HC</msg>
   <msg key="High_Contrast">High contrast</msg>
   <msg key="Logout">Logout</msg>
+  <msg key="maximize_portlet">Maximize portlet</msg>
+  <msg key="minimize_portlet">Minimize portlet</msg>
   <msg key="MySpace">My Space</msg>
   <msg key="online">online</msg>
   <msg key="Preferences">Preferences</msg>
