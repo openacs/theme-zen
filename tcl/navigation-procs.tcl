@@ -110,7 +110,7 @@ namespace eval zen {
             incr which_tab
         }
 
-        if { [exists_and_not_null community_id] } {
+        if { $community_id ne "" } {
             set type [dotlrn_community::get_community_type_from_community_id $community_id]
             if { $type eq "dotlrn_community" || $type eq "dotlrn_pers_community" } {
                  set community_message_key "#dotlrn.subcommunities_pretty_name#"
@@ -263,7 +263,7 @@ namespace eval zen {
         
         set subnavbar ""
         db_foreach list_page_nums_select {} {
-            if {[string equal $page_num $sort_key]} {
+            if {$page_num eq $sort_key} {
                 append subnavbar "\n<li id=\"sub-navigation-active\"><a href=\"$link?page_num=$sort_key\" title=\"[_ theme-zen.goto_portal_page_pretty_name]\" accesskey=\"$accesskey\">$pretty_name</a> </li>"
             } else {
                 append subnavbar "\n<li><a href=\"$link?page_num=$sort_key\" title=\"[_ theme-zen.goto_portal_page_pretty_name]\" accesskey=\"$accesskey\">$pretty_name</a> </li>"
