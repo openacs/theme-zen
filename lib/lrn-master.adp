@@ -1,13 +1,14 @@
 <master src="/www/blank-master">
   <if @context@ not nil><property name="context">@context;noquote@</property></if>
     <else><if @context_bar@ not nil><property name="context_bar">@context_bar;noquote@</property></if></else>
-  <if @focus@ not nil><property name="focus">@focus;noquote@</property></if>
+  <if @focus@ not nil><property name="focus">@focus;literal@</property></if>
   <if @doc@ defined><property name="&doc">doc</property></if>
+  <if @body@ defined><property name="&body">body</property></if>
 
 <div id="skiptocontent">
   <p>
     <a href="#content-wrapper" title="#theme-zen.skip_to_main_content#" accesskey="2">#theme-zen.skip_to_main_content#</a> | <a href="/theme-zen/accessibility" title="#theme-zen.Accessibility_page#" accesskey="0">#theme-zen.Accessibility#</a>
-        <if @user_id@ ne 0>
+        <if @user_id;literal@ ne 0>
           | <a href="@sitemap_url@" title="#dotlrn.Site_Map_Title#" accesskey="4">#dotlrn.Site_Map#</a>
         </if>
   </p>

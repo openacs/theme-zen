@@ -163,7 +163,7 @@ if { ![info exists doc(title)] && [info exists title] && $title ne "" } {
 }
 
 if { !([info exists no_navbar_p] && $no_navbar_p ne ""&& $no_navbar_p) &&
-     ([info exists portal_id] && $portal_id ne "") } {
+     [info exists portal_id] && $portal_id ne "" } {
     
     if { $community_id ne "" } {
         set youarehere "[dotlrn_community::get_community_name $community_id]"
