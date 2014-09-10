@@ -120,13 +120,13 @@
   <div id="footer">
     <div class="block-marker">#theme-zen.begin_footer#</div>
     <div id="footer-icons">
-      <img src="http://www.w3.org/Icons/valid-html401-blue" 
+      <img src="/resources/theme-zen/images/global/valid-html401-blue.png" 
           alt="Valid HTML 4.01 Strict" height="32" width="88">
 
       <a href="http://www.w3.org/WAI/WCAG1AA-Conformance" 
             title="Explanation of Level Double-A Conformance">
         <img height="32" width="88" 
-          src="http://www.w3.org/WAI/wcag1AA-blue"
+          src="/resources/theme-zen/images/global/wcag1AA-blue.png"
           alt="Level Double-A conformance icon, W3C-WAI Web Content Accessibility Guidelines 1.0">
       </a>
     </div>
