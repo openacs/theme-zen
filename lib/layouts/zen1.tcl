@@ -26,19 +26,19 @@ ad_page_contract {
     return_url:onevalue
 }
 
-if { ![info exists action_string]} {
+if { ![info exists action_string] } {
     set action_string ""
 }
 
-if { ![info exists theme_id]} {
+if { ![info exists theme_id] } {
     set theme_id ""
 }
 
-if { ![info exists return_url]} {
+if { ![info exists return_url] } {
     set return_url ""
 }
 
-if { [exists_and_not_null resource_dir] } {
+if { [info exists resource_dir] && $resource_dir ne "" } {
     portal::set_page_css $resource_dir
 }
 

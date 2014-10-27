@@ -1,6 +1,6 @@
 # $Id$
 
-set user_id [ad_get_user_id] 
+set user_id [ad_conn user_id] 
 set untrusted_user_id [ad_conn untrusted_user_id]
 set community_id [dotlrn_community::get_community_id]
 set dotlrn_url [dotlrn::get_url]
@@ -16,7 +16,7 @@ util_get_user_messages -multirow "user_messages"
 # Get system name
 set system_name [ad_system_name]
 set system_url [ad_url]
-if { [string equal [ad_conn url] "/"] } {
+if {[ad_conn url] eq "/"} {
     set system_url ""
 }
 
@@ -34,7 +34,7 @@ if { $untrusted_user_id != 0 } {
     set user_name [person::name -person_id $untrusted_user_id]
     set pvt_home_url [ad_pvt_home]
     set pvt_home_name [ad_pvt_home_name]
-    if [empty_string_p $pvt_home_name] {
+    if {$pvt_home_name eq ""} {
         set pvt_home_name [_ acs-subsite.Your_Account]
     }
     set logout_url [ad_get_logout_url]
@@ -76,7 +76,7 @@ if {![info exists return_url]} {
     set link $return_url
 }
 
-if { ![string equal [ad_conn package_key] [dotlrn::package_key]] } {
+if { [ad_conn package_key] ne [dotlrn::package_key] } {
     # Peter M: We are in a package (an application) that may or may not be under a dotlrn instance 
     # (i.e. in a news instance of a class)
     # and we want all links in the navbar to be active so the user can return easily to the class homepage
@@ -95,7 +95,7 @@ if { $community_id ne "" } {
     set admin_p [dotlrn::user_can_admin_community_p -user_id $user_id -community_id $community_id]
     set community_url [dotlrn_community::get_community_url $community_id]
 
-    if {[empty_string_p $portal_id] && !$admin_p } {
+    if {$portal_id eq "" && !$admin_p } {
         # not a member yet
         set portal_id [dotlrn_community::get_non_member_portal_id -community_id $community_id]
     }
@@ -158,20 +158,20 @@ if { [ad_conn untrusted_user_id] == 0 } {
 }
 
 # Set page title
-if { ![info exists doc(title)] && [exists_and_not_null title] } {
+if { ![info exists doc(title)] && [info exists title] && $title ne "" } {
     set doc(title) $title
 }
 
-if { !([exists_and_not_null no_navbar_p] && $no_navbar_p) &&
-     [exists_and_not_null portal_id] } {
+if { !([info exists no_navbar_p] && $no_navbar_p ne ""&& $no_navbar_p) &&
+     [info exists portal_id] && $portal_id ne "" } {
     
-    if {[exists_and_not_null community_id]} {
+    if { $community_id ne "" } {
         set youarehere "[dotlrn_community::get_community_name $community_id]"
     } else {
         set youarehere "[_ theme-zen.MySpace]"
     }
 
-    set extra_spaces "<img src=\"/resources/dotlrn/spacer.gif\" alt=\"\" border=0 width=15>"    
+    set extra_spaces "<img src=\"/resources/dotlrn/spacer.gif\" alt=\"\" border='0' width='15'>"    
     set navbar [zen::portal_navbar]
     set subnavbar [zen::portal_subnavbar \
         -user_id $user_id \
@@ -189,12 +189,18 @@ if { !([exists_and_not_null no_navbar_p] && $no_navbar_p) &&
 # class parent.  A top-level community that's not a class or club will keep the
 # top-level Selva colors.
 
-if { [string match /dotlrn/clubs/* [ad_conn url]] } {
-    set css_url [parameter::get_from_package_key -package_key "theme-zen" -parameter "communityCssUrl" -default "/resources/theme-zen/css/color/purple.css"]
-} elseif { [string match /dotlrn/classes/* [ad_conn url]] } {
-    set css_url [parameter::get_from_package_key -package_key "theme-zen" -parameter "courseCssUrl" -default "/resources/theme-zen/css/color/green.css"]
+if { [string match "/dotlrn/clubs/*" [ad_conn url]] } {
+    set css_url [parameter::get_from_package_key -package_key "theme-zen" \
+		     -parameter "communityCssUrl" \
+		     -default "/resources/theme-zen/css/color/purple.css"]
+} elseif { [string match "/dotlrn/classes/*" [ad_conn url]] } {
+    set css_url [parameter::get_from_package_key -package_key "theme-zen" \
+		     -parameter "courseCssUrl" \
+		     -default "/resources/theme-zen/css/color/green.css"]
 } else {
-    set css_url [parameter::get_from_package_key -package_key "theme-zen" -parameter "cssUrl" -default "/resources/theme-zen/css/color/blue.css"]
+    set css_url [parameter::get_from_package_key -package_key "theme-zen" \
+		     -parameter "cssUrl" \
+		     -default "/resources/theme-zen/css/color/blue.css"]
 }
 
 template::head::add_meta -name "robots" -content "all"
@@ -258,7 +264,9 @@ set lang_admin_p [permission::permission_p \
                       -object_id [site_node::get_element -url $acs_lang_url -element object_id] \
                       -privilege admin \
                       -party_id [ad_conn untrusted_user_id]]
-set toggle_translator_mode_url [export_vars -base "${acs_lang_url}admin/translator-mode-toggle" { { return_url [ad_return_url] } }]
+set toggle_translator_mode_url [export_vars -base "${acs_lang_url}admin/translator-mode-toggle" { 
+    { return_url [ad_return_url] } 
+}]
 
 #
 # Determine if we should be displaying the dotLRN toolbar

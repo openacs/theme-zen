@@ -11,11 +11,12 @@
     <version name="2.9.0d1" url="http://openacs.org/repository/download/apm/theme-zen-2.9.0d1.apm">
         <owner url="http:/www.weg.ee.usyd.edu.au">Rafael Calvo</owner>
         <release-date>2011-10-30</release-date>
-        <vendor url="http://www.weg.usyd.edu.au"></vendor>
-        <maturity>0</maturity>
+	<summary>Zen Theme for DotLRN</summary>
+        <vendor url="http://dotlrn.org">DotLRN Consortium</vendor>
+        <maturity>2</maturity>
 
         <provides url="theme-zen" version="2.9.0d1"/>
-        <requires url="dotlrn" version="2.6.0"/>
+        <requires url="dotlrn" version="2.9.0d1"/>
 
         <callbacks>
             <callback type="after-install"  proc="theme_zen::apm::after_install"/>
