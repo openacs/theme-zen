@@ -25,7 +25,7 @@ This page show how to convert a set of pages that doesn't use formtemplate into 
 
 	&lt;tr&gt;
 		&lt;td&gt;&lt;/td&gt;
-		&lt;td align="left"&gt;&lt;input type=submit value="Submit"&gt;&lt;/td&gt;
+		&lt;td align="left"&gt;&lt;input type="submit" value="Submit"&gt;&lt;/td&gt;
 	&lt;/tr&gt;
 &lt;/form&gt;
 </pre>
