@@ -156,10 +156,19 @@ namespace eval zen {
         set which_tab 0
         foreach tab_entry $tabs_list {
             foreach {url name accesskey} $tab_entry {}
+	    set localizedName [lang::util::localize $name]
             if { $which_tab == $which_tab_selected } {
-                append navbar "\n<li id=\"main-navigation-active\"><a href=\"$url\" title=\"[_ theme-zen.goto_tab_name]\" accesskey=\"$accesskey\">[lang::util::localize $name]</a></li>"
+                append navbar [subst {
+		    <li id="main-navigation-active">
+		    <a href="[ns_quotehtml $url]" title="[_ theme-zen.goto_tab_name]" accesskey="$accesskey">$localizedName</a>
+		    </li>
+		}]
             } else {
-                append navbar "\n<li><a href=\"$url\" title=\"[_ theme-zen.goto_tab_name]\" accesskey=\"$accesskey\">[lang::util::localize $name]</a></li>"
+                append navbar [subst {
+		    <li>
+		    <a href="[ns_quotehtml $url]" title="[_ theme-zen.goto_tab_name]" accesskey="$accesskey">$localizedName</a>
+		    </li>
+		}]
             }
             incr which_tab 
         }
@@ -264,24 +273,40 @@ namespace eval zen {
         set subnavbar ""
         db_foreach list_page_nums_select {} {
             if {$page_num eq $sort_key} {
-                append subnavbar "\n<li id=\"sub-navigation-active\"><a href=\"$link?page_num=$sort_key\" title=\"[_ theme-zen.goto_portal_page_pretty_name]\" accesskey=\"$accesskey\">$pretty_name</a> </li>"
+                append subnavbar [subst {
+		    <li id="sub-navigation-active">
+		    <a href="$link?page_num=$sort_key" title="[_ theme-zen.goto_portal_page_pretty_name]" accesskey="$accesskey">$pretty_name</a>
+		    </li>
+		}]
             } else {
-                append subnavbar "\n<li><a href=\"$link?page_num=$sort_key\" title=\"[_ theme-zen.goto_portal_page_pretty_name]\" accesskey=\"$accesskey\">$pretty_name</a> </li>"
+                append subnavbar [subst {
+		    <li>
+		    <a href="$link?page_num=$sort_key" title="[_ theme-zen.goto_portal_page_pretty_name]" accesskey="$accesskey">$pretty_name</a>
+		    </li>
+		}]
             }
          }
 
         if  { $community_id ne "" && $admin_p } {
             if {[string match "*/one-community-admin*" [ad_conn url]]} {
-                append subnavbar "\n<li id=\"sub-navigation-active\"><a href=\"${link}one-community-admin\" title=\"[_ theme-zen.goto_admin_page]\" accesskey=\"[_ theme-zen.goto_admin_page_accesskey]\">[_ dotlrn.Admin]</a></li>"
+                append subnavbar [subst {
+		    <li id="sub-navigation-active">
+		    <a href="${link}one-community-admin" title="[_ theme-zen.goto_admin_page]" accesskey="[_ theme-zen.goto_admin_page_accesskey]">[_ dotlrn.Admin]</a>
+		    </li>
+		}]
             } else {
-                append subnavbar "\n<li><a href=\"${link}one-community-admin\" title=\"[_ theme-zen.goto_admin_page]\" accesskey=\"[_ theme-zen.goto_admin_page_accesskey]\">[_ dotlrn.Admin]</a></li>"
+                append subnavbar [subst {
+		    <li>
+		    <a href="${link}one-community-admin" title="[_ theme-zen.goto_admin_page]" accesskey="[_ theme-zen.goto_admin_page_accesskey]">[_ dotlrn.Admin]</a>
+		    </li>
+		}]
             }
         }
 
         if { $subnavbar eq "" } {
             return ""
         } else {
-            return "<ul>\n${subnavbar}\n</ul>\n"
+            return "<ul>\n$subnavbar\n</ul>\n"
         }
     }
 }
