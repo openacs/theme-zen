@@ -1,6 +1,6 @@
 <master src="/www/blank-master">
-  <if @context@ not nil><property name="context">@context;noquote@</property></if>
-    <else><if @context_bar@ not nil><property name="context_bar">@context_bar;noquote@</property></if></else>
+  <if @context@ not nil><property name="context">@context;literal@</property></if>
+    <else><if @context_bar@ not nil><property name="context_bar">@context_bar;literal@</property></if></else>
   <if @focus@ not nil><property name="focus">@focus;literal@</property></if>
   <if @doc@ defined><property name="&doc">doc</property></if>
   <if @body@ defined><property name="&body">body</property></if>

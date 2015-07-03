@@ -1,5 +1,5 @@
 <master>
-<property name="title">{Project Zen Documentation}</property>
+<property name="doc(title)">{Project Zen Documentation}</property>
 <property name="context">{Project Zen Documentation}</property>
 
 <ul>
