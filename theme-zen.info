@@ -8,19 +8,20 @@
     <singleton-p>t</singleton-p>
     <auto-mount>theme-zen</auto-mount>
 
-    <version name="2.9.0d1" url="http://openacs.org/repository/download/apm/theme-zen-2.9.0d1.apm">
+    <version name="2.9.0d7" url="http://openacs.org/repository/download/apm/theme-zen-2.9.0d7.apm">
         <owner url="http:/www.weg.ee.usyd.edu.au">Rafael Calvo</owner>
         <release-date>2011-10-30</release-date>
 	<summary>Zen Theme for DotLRN</summary>
         <vendor url="http://dotlrn.org">DotLRN Consortium</vendor>
         <maturity>2</maturity>
 
-        <provides url="theme-zen" version="2.9.0d1"/>
+        <provides url="theme-zen" version="2.9.0d7"/>
         <requires url="dotlrn" version="2.9.0d1"/>
 
         <callbacks>
-            <callback type="after-install"  proc="theme_zen::apm::after_install"/>
-            <callback type="before-uninstall"  proc="theme_zen::apm::before_uninstall"/>
+            <callback type="after-install"    proc="theme_zen::apm::after_install"/>
+            <callback type="before-uninstall" proc="theme_zen::apm::before_uninstall"/>
+	    <callback type="after-upgrade"    proc="theme_zen::apm::after_upgrade"/>
         </callbacks>
         <parameters>
             <parameter datatype="string"  min_n_values="1"  max_n_values="1" name="AdditionalNavbarTabs"  default="/dotlrn/ #dotlrn.Home# #dotlrn.Home_Accesskey# /dotlrn/courses #dotlrn.Courses# #dotlrn.Courses_Accesskey# /dotlrn/communities #dotlrn.Communities# #dotlrn.Communities_Accesskey# /dotlrn/control-panel #dotlrn.control_panel# #dotlrn.control_panel_accesskey#" description="list of URL Names pairs which will make it into additional navbar tabs"/>
