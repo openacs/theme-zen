@@ -51,3 +51,9 @@ portal::layout_elements $element_list
 set element_2_first_num [llength $element_ids_1] 
 
 ad_return_template
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

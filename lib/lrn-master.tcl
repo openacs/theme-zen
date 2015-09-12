@@ -279,3 +279,9 @@ if {$dotlrn_toolbar_p} {
     template::head::add_css -href "/resources/dotlrn/dotlrn-toolbar.css"
     template::add_header -src "/packages/dotlrn/lib/toolbar"
 }
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:
