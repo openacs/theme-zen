@@ -3,7 +3,7 @@
 <property name="context">{Project Zen Documentation}</property>
 
 <ul>
-<li><b>Examples</b>
+<li><strong>Examples</strong>
 	<ul>
 		<li>Forms
 			<ul>
