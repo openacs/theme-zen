@@ -13,14 +13,12 @@
 
 <ul>
   <li>
-    <a href="#" onclick="setActiveStyleSheet('std'); return false;"
-      title="#theme-zen.switch_to_default_colors#">
+    <a href="#" id="set-style-sheet-std" title="#theme-zen.switch_to_default_colors#">
       #theme-zen.Default_Colors#
     </a>
   </li>
   <li>
-    <a href="#" onclick="setActiveStyleSheet('highContrast'); return false;"
-      title="#theme-zen.switch_to_high_contrast#">
+    <a href="#" id="set-style-sheet-highContrast" title="#theme-zen.switch_to_high_contrast#">
       #theme-zen.High_Contrast#
     </a>
   </li>

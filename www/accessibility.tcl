@@ -25,10 +25,11 @@ if { $dotlrn_admin_p } {
 }
 
 # Now add the ones for the tabs (home should be 1)
-foreach {url name key} [parameter::get_from_package_key -package_key "theme-zen" -parameter "AdditionalNavbarTabs" -default ""] {
-
+foreach {url name key} [parameter::get_from_package_key \
+                            -package_key "theme-zen" \
+                            -parameter "AdditionalNavbarTabs" \
+                            -default ""] {
     template::multirow append accesskeys $name $url [lang::util::localize $key]
-
 }
 
 template::multirow sort accesskeys key
@@ -45,6 +46,9 @@ template::list::create -name zen_keys -multirow accesskeys -elements {
         link_html {title "@accesskeys.name@"}
     }
 }
+
+template::add_event_listener -id "set-style-sheet-std" -script {setActiveStyleSheet('std');}
+template::add_event_listener -id "set-style-sheet-highContrast" -script {setActiveStyleSheet('highContrast');}
 
 ad_return_template
 
