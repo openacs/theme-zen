@@ -3,10 +3,10 @@
     <div class="portlet-title">
       <h1>@name;noquote@</h1>
     </div>
-    <if @shadeable_p@ eq "t">     
+    <if @shadeable_p;literal@ true>     
       <div class="portlet-controls">
         <a href="@configure_element_url@">
-          <if @shaded_p@ eq "t">
+          <if @shaded_p;literal@ true>
             <img src="/resources/theme-zen/images/portlets/max.gif" alt="#theme-zen.maximize_portlet#"  width="19" height="16">
           </if>
           <else>
