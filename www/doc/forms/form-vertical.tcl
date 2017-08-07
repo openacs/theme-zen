@@ -75,3 +75,8 @@ ad_form -name "your_zen_level" -method post -html {enctype multipart/form-data c
 	 {help_text {"Please describe your desired state of being"}}\
 	 {html {rows 7 cols 50}}}
 }
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

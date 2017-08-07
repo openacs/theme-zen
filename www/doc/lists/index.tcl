@@ -43,3 +43,9 @@ db_multirow -extend { item_url } order_lines select_order_lines {
 } {
     set item_url [export_vars -base "item" { item_id }]
 }
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

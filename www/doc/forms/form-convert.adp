@@ -59,7 +59,7 @@ submit:
 	<li>Then modify the adp page (form.adp) and get rid of everything between &lt;form&gt; and &lgt;/form&gt; including the form tags themselves.
 	<li>Now add the following to form.adp:
 <pre>
-&lt;formtemplate id=news&gt;&lt;/formtemplate&gt;
+&lt;formtemplate id="news"&gt;&lt;/formtemplate&gt;
 </pre>
 	<li>Voila, your initial form is now set up. 
 	</ul>
