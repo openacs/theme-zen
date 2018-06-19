@@ -1,6 +1,6 @@
 # $Id$
 
-set user_id [ad_conn user_id] 
+set user_id [ad_conn user_id]
 set untrusted_user_id [ad_conn untrusted_user_id]
 set community_id [dotlrn_community::get_community_id]
 set dotlrn_url [dotlrn::get_url]
@@ -56,7 +56,7 @@ if { $untrusted_user_id != 0 } {
             set admin_url "[subsite::get_element -element url]admin/"
         }
     }
-} 
+}
 
 # Who's Online
 set num_users_online [lc_numeric [whos_online::num_users]]
@@ -77,7 +77,7 @@ if {![info exists return_url]} {
 }
 
 if { [ad_conn package_key] ne [dotlrn::package_key] } {
-    # Peter M: We are in a package (an application) that may or may not be under a dotlrn instance 
+    # Peter M: We are in a package (an application) that may or may not be under a dotlrn instance
     # (i.e. in a news instance of a class)
     # and we want all links in the navbar to be active so the user can return easily to the class homepage
     # or to the My Space page
@@ -107,7 +107,7 @@ if { $community_id ne "" } {
         set comm_type [dotlrn_community::get_community_type_from_community_id [dotlrn_community::get_parent_id -community_id $community_id]]
     }
 
-  
+
     ### Logo hack
     set comm_id_for_logo $community_id
 
@@ -132,7 +132,7 @@ if { $community_id ne "" } {
         set header_logo_alt_text [dotlrn_community::get_attribute \
                                       -community_id $comm_id_for_logo \
                                       -attribute_name header_logo_alt_text]
-        
+
         set img_attrib [subst {src="$header_logo_url" alt="$header_logo_alt_text"}]
     }
 
@@ -164,14 +164,14 @@ if { ![info exists doc(title)] && [info exists title] && $title ne "" } {
 
 if { !([info exists no_navbar_p] && $no_navbar_p ne ""&& $no_navbar_p) &&
      [info exists portal_id] && $portal_id ne "" } {
-    
+
     if { $community_id ne "" } {
         set youarehere "[dotlrn_community::get_community_name $community_id]"
     } else {
         set youarehere "[_ theme-zen.MySpace]"
     }
 
-    set extra_spaces "<img src=\"/resources/dotlrn/spacer.gif\" alt=\"\" border='0' width='15'>"    
+    set extra_spaces "<img src=\"/resources/dotlrn/spacer.gif\" alt=\"\" border='0' width='15'>"
     set navbar [zen::portal_navbar]
     set subnavbar [zen::portal_subnavbar \
         -user_id $user_id \
@@ -191,16 +191,16 @@ if { !([info exists no_navbar_p] && $no_navbar_p ne ""&& $no_navbar_p) &&
 
 if { [string match "/dotlrn/clubs/*" [ad_conn url]] } {
     set css_url [parameter::get_from_package_key -package_key "theme-zen" \
-		     -parameter "communityCssUrl" \
-		     -default "/resources/theme-zen/css/color/purple.css"]
+                     -parameter "communityCssUrl" \
+                     -default "/resources/theme-zen/css/color/purple.css"]
 } elseif { [string match "/dotlrn/classes/*" [ad_conn url]] } {
     set css_url [parameter::get_from_package_key -package_key "theme-zen" \
-		     -parameter "courseCssUrl" \
-		     -default "/resources/theme-zen/css/color/green.css"]
+                     -parameter "courseCssUrl" \
+                     -default "/resources/theme-zen/css/color/green.css"]
 } else {
     set css_url [parameter::get_from_package_key -package_key "theme-zen" \
-		     -parameter "cssUrl" \
-		     -default "/resources/theme-zen/css/color/blue.css"]
+                     -parameter "cssUrl" \
+                     -default "/resources/theme-zen/css/color/blue.css"]
 }
 
 template::head::add_meta -name "robots" -content "all"
@@ -251,7 +251,7 @@ if { [info exists context] } {
     set context_tmp {}
 }
 
-# Build breadcrumbs only from dotlrn root node 
+# Build breadcrumbs only from dotlrn root node
 # then replace the first element to be dotLRN always
 ad_context_bar_multirow -from_node [dotlrn::get_node_id] -- $context_tmp
 if { [template::multirow get context 1 url] ne "" } {
@@ -264,8 +264,8 @@ set lang_admin_p [permission::permission_p \
                       -object_id [site_node::get_element -url $acs_lang_url -element object_id] \
                       -privilege admin \
                       -party_id [ad_conn untrusted_user_id]]
-set toggle_translator_mode_url [export_vars -base "${acs_lang_url}admin/translator-mode-toggle" { 
-    { return_url [ad_return_url] } 
+set toggle_translator_mode_url [export_vars -base "${acs_lang_url}admin/translator-mode-toggle" {
+    { return_url [ad_return_url] }
 }]
 
 #
