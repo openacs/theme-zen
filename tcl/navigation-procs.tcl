@@ -201,7 +201,7 @@ namespace eval zen {
             set link "[dotlrn::get_url]/"
 
             if {[dotlrn::user_p -user_id $user_id] &&
-                [ad_get_client_property dotlrn home_tab_selected_p] } {
+                [ad_get_client_property -default false dotlrn home_tab_selected_p] } {
                 # this user is a dotlrn user, we've selected the home tab,
                 # show their personal portal subnavbar, including the control panel link
                 set portal_id [dotlrn::get_portal_id -user_id $user_id]
