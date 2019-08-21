@@ -24,7 +24,7 @@ ad_library {
 
 }
 
-# DRB: This needs to be cleaned up to return multirows rather than includee HTML
+# DRB: This needs to be cleaned up to return multirows rather than include HTML
 # in Tcl.
 
 namespace eval zen {
@@ -90,7 +90,10 @@ namespace eval zen {
         set which_tab 0
         set home_tab -1
 
-        foreach {url name accesskey} [parameter::get_from_package_key -package_key "theme-zen" -parameter "AdditionalNavbarTabs" -default ""] {
+        foreach {url name accesskey} [parameter::get_from_package_key \
+                                          -package_key "theme-zen" \
+                                          -parameter "AdditionalNavbarTabs" \
+                                          -default ""] {
             lappend tabs_list [list $url $name $accesskey]
             if { $current_url == $url ||
                  $current_url == "$dotlrn_url/index" && $name eq "#dotlrn.Home#" } {
