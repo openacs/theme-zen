@@ -13,7 +13,7 @@ ad_library {
 namespace eval theme_zen {}
 namespace eval theme_zen::apm {}
 
-ad_proc -public theme_zen::apm::after_install {} {
+ad_proc -rivate theme_zen::apm::after_install {} {
 
     Create the Zen Theme for the new-portals and dotlrn packages.
 
@@ -160,7 +160,7 @@ ad_proc -public theme_zen::apm::after_install {} {
 
 }
 
-ad_proc -public theme_zen::apm::before_uninstall {} {
+ad_proc -private theme_zen::apm::before_uninstall {} {
     Uninstall the package
 } {
     subsite::delete_subsite_theme -key dotlrn_zen
@@ -174,7 +174,7 @@ ad_proc -public theme_zen::apm::before_uninstall {} {
 }
 
 
-ad_proc -public theme_zen::apm::after_upgrade {
+ad_proc -private theme_zen::apm::after_upgrade {
     {-from_version_name:required}
     {-to_version_name:required}
 } {
