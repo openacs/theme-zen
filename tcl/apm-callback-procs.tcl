@@ -13,7 +13,7 @@ ad_library {
 namespace eval theme_zen {}
 namespace eval theme_zen::apm {}
 
-ad_proc -rivate theme_zen::apm::after_install {} {
+ad_proc -private theme_zen::apm::after_install {} {
 
     Create the Zen Theme for the new-portals and dotlrn packages.
 
