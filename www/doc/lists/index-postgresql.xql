@@ -24,7 +24,7 @@
                      else :folder_path || '/' || fs_objects.file_upload_name
                    end as file_url,
                    case
-                     when fs_objects.last_modified >= (now() - cast('$n_past_days days' as interval))
+                     when fs_objects.last_modified >= (now() - cast(:n_past_days days as interval))
                      then 1
                      else 0
                    end as new_p
