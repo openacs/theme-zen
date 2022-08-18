@@ -1,3 +1,7 @@
+ad_page_contract {
+    Upgrade
+}
+
 set package_id [site_node::get_element -url /dotlrn -element package_id]
 db_transaction {
 

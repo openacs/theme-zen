@@ -1,4 +1,8 @@
-# $Id$
+ad_include_contract {
+    .LRN Master
+
+    # $Id$
+}
 
 set user_id [ad_conn user_id]
 set untrusted_user_id [ad_conn untrusted_user_id]

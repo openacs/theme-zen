@@ -1,3 +1,7 @@
+ad_page_contract {
+    Index page
+}
+
 ns_returnredirect accessibility
 
 # Local variables:
