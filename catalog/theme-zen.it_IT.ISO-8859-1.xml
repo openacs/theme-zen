@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="theme-zen" locale="it_IT" charset="ISO-8859-1">
+
+  <msg key="acc">ACC</msg>
+  <msg key="Access_key">Tasto D&#39;Accesso</msg>
+  <msg key="Access_keys">Tasti D&#39;Accesso</msg>
+  <msg key="Access_keys_can_be_used_">I tasti di accesso possono essere utilizzati per muoversi rapidamente attraverso le sezioni principali del sito. Se stai usando Windows, premi il tasto &#34;Alt&#34; e il tasto di accesso corrispondente. Gli utenti Mac devono premere il tasto &#34;ctrl&#34; invece di &#34;Alt&#34;. A seconda del browser che stai usando, potresti anche dover premere successivamente &#34;Invio&#34;.</msg>
+  <msg key="Accessibility">Accessibilità</msg>
+  <msg key="accessibility_note">Notate che nessun software può verificare completamente l&#39;accessibilità del tuo sito web.</msg>
+  <msg key="Accessibility_page">Pagina Accessibilità</msg>
+  <msg key="admin">Ammistrazione Classe</msg>
+  <msg key="Associated_page">Pagina Associata</msg>
+  <msg key="begin_footer">Inizio Piè di Pagina</msg>
+  <msg key="begin_main_content">Inizio Contenuto Principale</msg>
+  <msg key="begin_main_navigation">Inizio Navigazione Principale</msg>
+  <msg key="begin_sub_navigation">Inizio Sotto Navigazione</msg>
+  <msg key="Change_Contrast">Cambia Contrasto</msg>
+  <msg key="Communities">Comunità</msg>
+  <msg key="ControlPanel">Pannello di Controllo</msg>
+  <msg key="Courses">Classi</msg>
+  <msg key="Default_Colors">Colori predefiniti</msg>
+  <msg key="dotlrn_Home">.LRN Home</msg>
+  <msg key="dotlrn_Project_Central">Progetto .LRN</msg>
+  <msg key="goto_admin_page">Vai alla pagina Ammin.</msg>
+  <msg key="goto_admin_page_accesskey">A</msg>
+  <msg key="goto_portal_page_pretty_name">Vai alla pagina %pretty_name%</msg>
+  <msg key="goto_tab_name">Vai a %name%</msg>
+  <msg key="hc">CE</msg>
+  <msg key="High_Contrast">Contrasto elevato</msg>
+  <msg key="Logout">Uscita</msg>
+  <msg key="maximize_portlet">Massimizza portlet</msg>
+  <msg key="minimize_portlet">Minimizza portlet</msg>
+  <msg key="MySpace">Spazio Personale</msg>
+  <msg key="online">online</msg>
+  <msg key="Preferences">Preferenze</msg>
+  <msg key="skip_to_main_content">Salta Al Contenuto Principale</msg>
+  <msg key="Standards_Compliance">Conformità agli Standard</msg>
+  <msg key="Standards_compliance_text">Tutte le pagine utente sono conformi alle specifiche &lt;abbr title=&#34;HyperText Markup Language&#34;&gt;HTML&lt;/abbr&gt; Strict 4.01 e usano un markup semantico strutturato. &lt;abbr title=&#34;Cascading Style Sheets&#34;&gt;CSS&lt;/abbr&gt; sono usati per formattare e impaginare il contenuto. Riteniamo che le pagine utente siano &lt;abbr title=&#34;Web Content Accessibility Guidelines&#34;&gt;WCAG&lt;/abbr&gt; 1.0 livello &lt;abbr title=&#34;Doble-A&#34;&gt;AA&lt;/abbr&gt; e &lt;abbr title=&#34;United States&#34;&gt;U.S.&lt;/abbr&gt; Federal Government Section 508 compliant.</msg>
+  <msg key="std">STD</msg>
+  <msg key="switch_to_default_colors">Passa ai colori predefiniti</msg>
+  <msg key="switch_to_high_contrast">Passa a contrasto elevato</msg>
+  <msg key="The_following_styles_are_">Sono disponibili i seguenti stili:</msg>
+  <msg key="Tools">Strumenti</msg>
+  <msg key="upgrade">Aggiorna</msg>
+  <msg key="upgrade_finished">L&#39;aggiornamento al tema Zen è stato completato con successo.</msg>
+  <msg key="upgrade_intro">Facendo clic sul pulsante qui sotto la tua installazione .LRN sarà aggiornata al tema Zen</msg>
+  <msg key="website_logo">Logo Sito</msg>
+  <msg key="You_are_here">Tu sei qui</msg>
+  <msg key="Zen_1_column">Zen a Una Colonna</msg>
+  <msg key="Zen_2_column">Zen a Due Colonne</msg>
+  <msg key="Zen_3_column">Zen a Tre Colonne</msg>
+  <msg key="Zen_Theme">Tema Zen</msg>
+  <msg key="Zen_thin_thick">Zen Sottile-Spesso</msg>
+  <msg key="Zen_thin_thick_thin">Zen Sottile-Spesso-Sottile</msg>
+</message_catalog>

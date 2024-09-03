@@ -24,7 +24,7 @@ ad_library {
 
 }
 
-# DRB: This needs to be cleaned up to return multirows rather than includee HTML
+# DRB: This needs to be cleaned up to return multirows rather than include HTML
 # in Tcl.
 
 namespace eval zen {
@@ -90,7 +90,10 @@ namespace eval zen {
         set which_tab 0
         set home_tab -1
 
-        foreach {url name accesskey} [parameter::get_from_package_key -package_key "theme-zen" -parameter "AdditionalNavbarTabs" -default ""] {
+        foreach {url name accesskey} [parameter::get_from_package_key \
+                                          -package_key "theme-zen" \
+                                          -parameter "AdditionalNavbarTabs" \
+                                          -default ""] {
             lappend tabs_list [list $url $name $accesskey]
             if { $current_url == $url ||
                  $current_url == "$dotlrn_url/index" && $name eq "#dotlrn.Home#" } {
@@ -195,18 +198,13 @@ namespace eval zen {
         set control_panel_url "$dotlrn_url/$control_panel_name"
 
         if { $community_id eq "" } {
-            # We are not under a dotlrn community. However we could be
+            # We are not under a dotlrn community. However, we could be
             # under /dotlrn (i.e. in the user's portal) or anywhere
             # else on the site
             set link "[dotlrn::get_url]/"
 
-            set selected_p [ad_get_client_property dotlrn home_tab_selected_p]
-
-            if { $selected_p eq "" } {
-                set selected_p false
-            }
-
-            if {[dotlrn::user_p -user_id $user_id] && $selected_p} {
+            if {[dotlrn::user_p -user_id $user_id] &&
+                [ad_get_client_property -default false dotlrn home_tab_selected_p] } {
                 # this user is a dotlrn user, we've selected the home tab,
                 # show their personal portal subnavbar, including the control panel link
                 set portal_id [dotlrn::get_portal_id -user_id $user_id]
